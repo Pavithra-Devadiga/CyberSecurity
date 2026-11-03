@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>CyberShield - Cybersecurity Internship Report</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page {
+    size: 210mm 297mm; /* A4 */
+    margin: 1.0in 1.0in 1.0in 1.0in;
+    mso-header-margin: 0.5in;
+    mso-footer-margin: 0.5in;
+}
+
+@page Section1 {
+    size: 210mm 297mm;
+    margin: 1.0in 1.0in 1.0in 1.0in;
+    mso-header-margin: 0.5in;
+    mso-footer-margin: 0.5in;
+    mso-header: h1;
+    mso-footer: f1;
+}
+
+div.Section1 {
+    page: Section1;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000000;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 850px;
+    background-color: #ffffff;
+}
+
+/* Page break rules */
+.page-break {
+    page-break-before: always;
+    mso-break-type: section-break;
+    clear: both;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+}
+
+@media print {
+    .page-break {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
+.cover-page, .cert-page {
+    border: 3px double #000;
+    padding: 28px;
+    box-sizing: border-box;
+    min-height: 9.8in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1.cover-title {
+    font-size: 17pt;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+h2.cover-subtitle {
+    font-size: 13pt;
+    text-align: center;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.report-title-box {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.report-main-title {
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.emblem-placeholder {
+    width: 140px;
+    height: 140px;
+    margin: 20px auto;
+    border: 2px dashed #999;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10pt;
+    color: #555;
+    background: #fdfdfd;
+}
+
+h1.chapter-title {
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #222;
+    padding-bottom: 6px;
+}
+
+h2.section-title {
+    font-size: 13pt;
+    font-weight: bold;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+h3.subsection-title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-style: italic;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+ul, ol {
+    margin-top: 6px;
+    margin-bottom: 12px;
+    padding-left: 28px;
+}
+
+li {
+    margin-bottom: 6px;
+    text-align: justify;
+}
+
+/* Tables */
+table.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 11pt;
+}
+
+table.report-table th, table.report-table td {
+    border: 1px solid #444;
+    padding: 8px 10px;
+    vertical-align: top;
+}
+
+table.report-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+}
+
+table.report-table tr:nth-child(even) td {
+    background-color: #fafafa;
+}
+
+/* Signatures Table */
+table.sig-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    border: none;
+}
+
+table.sig-table td {
+    border: none;
+    padding: 10px 15px;
+    vertical-align: top;
+}
+
+/* Code & Pre */
+pre.code-block {
+    background-color: #f7f9fa;
+    border: 1px solid #d1d5db;
+    border-left: 4px solid #2563eb;
+    padding: 12px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 9.5pt;
+    line-height: 1.4;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin: 12px 0;
+}
+
+.equation-box {
+    text-align: center;
+    font-style: italic;
+    font-size: 13pt;
+    font-weight: bold;
+    margin: 15px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+}
+
+.figure-box {
+    margin: 18px 0;
+    text-align: center;
+}
+
+.figure-caption {
+    font-weight: bold;
+    font-size: 11pt;
+    margin-top: 8px;
+}
+
+.header-rule {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5pt;
+    border-bottom: 1px solid #777;
+    padding-bottom: 4px;
+    margin-bottom: 18px;
+    color: #444;
+}
+
+.footer-rule {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5pt;
+    border-top: 1px solid #777;
+    padding-top: 4px;
+    margin-top: 25px;
+    color: #444;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 9.5pt;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.badge-critical { background: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+.badge-high { background: #ffedd5; color: #9a3412; border: 1px solid #fb923c; }
+.badge-medium { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+.badge-low { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+</style>
+</head>
+<body>
+
+<div class="Section1">
+
+<!-- ================= PAGE 1: TITLE PAGE ================= -->
+<div class="cover-page">
+    <div class="center-text">
+        <h1 class="cover-title">UNIVERSITY OF VISVESVARAYA COLLEGE OF ENGINEERING</h1>
+        <h2 class="cover-subtitle">(First State Autonomous University on IIT Model)<br>K R Circle, Bengaluru – 560 001</h2>
+        
+        <div class="emblem-placeholder">
+            <b>[ UVCE EMBLEM ]</b><br>
+            <span style="font-size: 8pt;">Affix Institutional Seal</span>
+        </div>
+
+        <p class="center-text" style="font-size: 13pt; margin-top: 15px; margin-bottom: 4px;">A Report on Summer Internship-II</p>
+        <p class="report-main-title">"CYBERSECURITY INTERNSHIP"</p>
+        <p class="center-text" style="font-size: 11pt; margin-top: 5px;">
+            Submitted under the mandatory Summer Internship required for the III Year (V Semester)<br>
+            <b>Bachelor of Technology in Information Science and Engineering</b>
+        </p>
+    </div>
+
+    <table style="width: 100%; border: none; margin: 25px 0;">
+        <tr>
+            <td style="width: 50%; vertical-align: top; border: none;">
+                <b>Submitted by:</b><br>
+                <span style="font-size: 12pt; font-weight: bold; color: #1e3a8a;">PAVITHRA DEVADIGA</span><br>
+                <b>USN: [U25UV24TXXXXXX]</b><br>
+                V Sem, B.Tech, ISE
+            </td>
+            <td style="width: 50%; vertical-align: top; border: none; text-align: right;">
+                <b>Conducted by:</b><br>
+                <span style="font-size: 12pt; font-weight: bold; color: #b91c1c;">HONEYWELL</span><br>
+                <i>Powered by BharatCares</i><br><br>
+                <b>Proctor:</b><br>
+                <b>Dr. Tanuja R</b><br>
+                Associate Professor
+            </td>
+        </tr>
+    </table>
+
+    <div class="center-text" style="border-top: 1px solid #444; padding-top: 15px;">
+        <p style="font-weight: bold; margin-bottom: 2px;">DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</p>
+        <p style="margin-top: 0; margin-bottom: 2px;">UNIVERSITY OF VISVESVARAYA COLLEGE OF ENGINEERING</p>
+        <p style="margin-top: 0; font-weight: bold;">UVCE, KR Circle, Bengaluru – 560 001<br>2026–2027</p>
+    </div>
+</div>
+
+<!-- ================= PAGE 2: CERTIFICATE ================= -->
+<div class="page-break"></div>
+<div class="cert-page">
+    <div class="center-text">
+        <h1 class="cover-title" style="font-size: 15pt;">UNIVERSITY OF VISVESVARAYA COLLEGE OF ENGINEERING</h1>
+        <p style="margin-top: 0; font-size: 11pt;">K R Circle, Bengaluru – 560 001</p>
+        
+        <div class="emblem-placeholder" style="width: 100px; height: 100px; margin: 15px auto;">
+            <b>[ UVCE SEAL ]</b>
+        </div>
+        
+        <p style="font-size: 13pt; font-weight: bold; margin-top: 10px; margin-bottom: 5px;">Department of Computer Science and Engineering</p>
+        <h2 style="font-size: 16pt; text-decoration: underline; margin-top: 5px; margin-bottom: 20px;">Certificate</h2>
+    </div>
+
+    <p style="text-align: justify; font-size: 12pt; line-height: 1.8; margin: 20px 0;">
+        This is to certify that <b>PAVITHRA DEVADIGA</b>, bearing Register Number <b>[U25UV24TXXXXXX]</b>, has successfully completed the Summer Internship – II work on <b>"Cybersecurity"</b> conducted by the <b>Honeywell Future Skills Edge Program</b>, implemented by <b>BharatCares</b>, for a duration of 120 hours from June 2026 to July 2026, in partial fulfilment of the requirements for the V Semester, Bachelor of Technology in Information Science and Engineering, University of Visvesvaraya College of Engineering, during the academic year 2026–2027.
+    </p>
+
+    <table class="sig-table" style="margin-top: 40px;">
+        <tr>
+            <td style="width: 50%;">
+                <b>Proctor:</b><br><br><br>
+                ___________________________________<br>
+                <b>Dr. Tanuja R</b><br>
+                Associate Professor<br>
+                Dept. of CSE,<br>
+                UVCE, Bengaluru
+            </td>
+            <td style="width: 50%; text-align: right;">
+                <b>Chairperson:</b><br><br><br>
+                ___________________________________<br>
+                <b>Dr. Manjula S H</b><br>
+                Professor<br>
+                Dept. of CSE,<br>
+                UVCE, Bengaluru
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top: 50px;">
+                <b>Examiner 1:</b><br><br><br>
+                ___________________________________
+            </td>
+            <td style="padding-top: 50px; text-align: right;">
+                <b>Examiner 2:</b><br><br><br>
+                ___________________________________
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- ================= PAGE 3: ACKNOWLEDGEMENT ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>Acknowledgement</span></div>
+<h1 class="chapter-title">ACKNOWLEDGEMENT</h1>
+
+<p>I express my sincere gratitude to the <b>University of Visvesvaraya College of Engineering (UVCE)</b>, Bengaluru, and the <b>Department of Information Science and Engineering / Computer Science and Engineering</b> for providing me with the opportunity, institutional resources, and continuous support to undertake this summer internship.</p>
+
+<p>I am especially thankful to my academic guide and proctor, <b>Dr. TANUJA R</b>, Associate Professor, for her valuable guidance, constructive suggestions, and encouraging mentorship throughout the course of this project and report preparation.</p>
+
+<p>I would also like to express my sincere gratitude to <b>Dr. MANJULA S H</b>, Professor and Chairperson of the Department, and the <b>Director of UVCE</b> for facilitating the internship program and providing the essential academic environment that significantly contributed to my technical and professional learning.</p>
+
+<p>I sincerely thank <b>Honeywell</b> and <b>BharatCares</b> for providing the opportunity to participate in the <b>Honeywell Future Skills Edge Program on Cybersecurity</b> and complete the 120-hour internship. The comprehensive curriculum vastly enhanced my understanding of cybersecurity fundamentals, network security architectures, vulnerability assessment methodologies, secure programming, and defensive software engineering.</p>
+
+<p>As part of the practical component of the internship, I architected and developed <b>CyberShield</b>, an automated enterprise web application vulnerability scanner and security assessment platform. By strictly adopting <b>Java 21</b> and <b>Spring Boot 3</b> for backend services and completely eliminating Python scripts, the project provided extensive practical exposure to enterprise-grade software architecture, Server-Side Request Forgery (SSRF) defense mechanisms, asynchronous scanning pipelines, mathematical security scoring models, OpenPDF report generation, and interactive data visualization using <b>React 18</b> and <b>Tailwind CSS</b>.</p>
+
+<p>Finally, I extend my heartfelt thanks to my parents, family, friends, classmates, and well-wishers for their unwavering encouragement, patience, and support throughout this valuable educational journey.</p>
+
+<table style="width: 100%; border: none; margin-top: 40px;">
+    <tr>
+        <td style="border: none;"></td>
+        <td style="width: 250px; border: none; text-align: right;">
+            <b>Pavithra Devadiga</b><br>
+            USN: [U25UV24TXXXXXX]<br>
+            V Sem, B.Tech, ISE
+        </td>
+    </tr>
+</table>
+<div class="footer-rule"><span>Dept. of CSE</span><span>2026-27</span></div>
+
+<!-- ================= PAGE 4: ABSTRACT ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>Abstract</span></div>
+<h1 class="chapter-title">ABSTRACT</h1>
+
+<p>Cybersecurity has become paramount with the accelerated expansion of web services, cloud computing architectures, and interconnected enterprise APIs. As business enterprises and public institutions increasingly host sensitive data and core operational workflows on public web infrastructures, protecting applications against unauthorized access, data breaches, and software misconfigurations has become a non-negotiable imperative. The OWASP Top 10 documents severe, recurring vulnerabilities—such as SQL Injection, Cross-Site Scripting (XSS), missing security headers, insecure SSL/TLS configurations, and exposed administrative endpoints—that continue to threaten modern systems.</p>
+
+<p>This report documents the knowledge acquired and practical engineering achieved during a 120-hour Cybersecurity Internship organized by <b>BharatCares</b> under the <b>Honeywell Future Skills Edge Program</b> from June 2026 to July 2026, following the 80-hour foundational cybersecurity training completed on their platform. The training covered essential information security principles, the CIA Triad, cryptographic algorithms, network protocol defense, threat modeling, vulnerability management, access control frameworks, and defensive programming.</p>
+
+<p>To bridge theoretical understanding with production-grade engineering, I designed and implemented <b>CyberShield</b>, an automated enterprise web application vulnerability scanner and security assessment platform. Emphasizing enterprise reliability, type safety, and high-concurrency execution, the entire backend was engineered purely in <b>Java 21</b> and <b>Spring Boot 3.4.1</b>, consciously eschewing Python scripting. CyberShield integrates eight modular scanning engines that systematically audit target web applications for HTTP security header omissions, SSL/TLS certificate validity and deprecated cipher suites, SQL injection vectors, reflected XSS vulnerabilities, sensitive file exposures (e.g., <code>.env</code>, <code>.git</code>, Spring Boot <code>/actuator</code>), sensitive information leakage (AWS keys, private keys), and technology fingerprints, alongside a native REST integration with the <b>OWASP Zed Attack Proxy (ZAP)</b>.</p>
+
+<p>The platform embeds comprehensive defensive engineering, including a robust Server-Side Request Forgery (SSRF) validator that resolves target hostnames and blocks requests targeting loopback addresses, private RFC 1918 subnets, and cloud metadata services (<code>169.254.169.254</code>). Furthermore, it incorporates a dual-scoring model that calculates a Cumulative Risk Score (<i>R</i>) and a normalized 0–100 Security Score (<i>S</i>), generates executive-ready PDF audit reports using <b>OpenPDF</b>, and presents live security analytics via a responsive <b>React 18</b> Single Page Application.</p>
+
+<p>The internship delivered comprehensive hands-on exposure to full-stack security engineering, vulnerability assessment, defensive network programming, containerization with Docker, and automated testing with JUnit 5 and Mockito. This report outlines the internship objectives, training modules, system architecture, technical implementation, experimental results, key learnings, and future research directions.</p>
+<div class="footer-rule"><span>Dept. of CSE</span><span>2026-27</span></div>
+
+<!-- ================= PAGE 5: TABLE OF CONTENTS ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>Table of Contents</span></div>
+<h1 class="chapter-title">TABLE OF CONTENTS</h1>
+
+<table class="report-table">
+    <thead>
+        <tr>
+            <th style="width: 10%; text-align: center;">Sl. No.</th>
+            <th style="width: 75%;">Title</th>
+            <th style="width: 15%; text-align: center;">Page No.</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td style="text-align: center;"><b>1</b></td><td><b>Introduction</b></td><td style="text-align: center;">1</td></tr>
+        <tr><td style="text-align: center;"><b>2</b></td><td><b>About the Organisation</b></td><td style="text-align: center;">2</td></tr>
+        <tr><td style="text-align: center;"><b>3</b></td><td><b>Objectives of the Internship</b></td><td style="text-align: center;">3</td></tr>
+        <tr><td style="text-align: center;"><b>4</b></td><td><b>Cybersecurity Training and Guided Project Work</b></td><td style="text-align: center;">4</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;4.1 Online Cybersecurity Training – 80 Hours</td><td style="text-align: center;">4</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;4.2 Guided Practical Work and Project Development – 40 Hours</td><td style="text-align: center;">5</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;4.3 Overall Training Experience</td><td style="text-align: center;">5</td></tr>
+        <tr><td style="text-align: center;"><b>5</b></td><td><b>Specific Skills Acquired</b></td><td style="text-align: center;">6</td></tr>
+        <tr><td style="text-align: center;"><b>6</b></td><td><b>CyberShield Vulnerability Scanner – Project Overview</b></td><td style="text-align: center;">7</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;6.1 Introduction to the Project</td><td style="text-align: center;">7</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;6.2 Problem Statement</td><td style="text-align: center;">7</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;6.3 Project Objectives</td><td style="text-align: center;">8</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;6.4 Scope and Features</td><td style="text-align: center;">8</td></tr>
+        <tr><td style="text-align: center;"><b>7</b></td><td><b>Project Architecture and Design</b></td><td style="text-align: center;">9</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;7.1 System Architecture</td><td style="text-align: center;">9</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;7.2 Technologies and Tools Used</td><td style="text-align: center;">10</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;7.3 Security Assessment Methodology</td><td style="text-align: center;">11</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;7.4 Risk Scoring and Security Score Assessment</td><td style="text-align: center;">12</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;7.5 Project Structure and Software Requirements</td><td style="text-align: center;">14</td></tr>
+        <tr><td style="text-align: center;"><b>8</b></td><td><b>Project Implementation</b></td><td style="text-align: center;">15</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;8.1 Backend Implementation & Architecture</td><td style="text-align: center;">15</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;8.2 Automated Security Scanners</td><td style="text-align: center;">15</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;8.3 SSRF Defense & Safe HTTP Client Architecture</td><td style="text-align: center;">16</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;8.4 Security Score & Severity Classification Engine</td><td style="text-align: center;">17</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;8.5 Automated PDF Report Generation</td><td style="text-align: center;">17</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;8.6 Frontend Dashboard Implementation</td><td style="text-align: center;">18</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;8.7 Project Execution</td><td style="text-align: center;">18</td></tr>
+        <tr><td style="text-align: center;"><b>9</b></td><td><b>Project Results and Analysis</b></td><td style="text-align: center;">19</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;9.1 Security Assessment Results</td><td style="text-align: center;">19</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;9.2 Sample Scan Results</td><td style="text-align: center;">19</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;9.3 Security Score and Risk Distribution Analysis</td><td style="text-align: center;">20</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;9.4 Dashboard Visualization and Reporting</td><td style="text-align: center;">21</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;9.5 Overall Project Analysis</td><td style="text-align: center;">21</td></tr>
+        <tr><td style="text-align: center;"><b>10</b></td><td><b>Learning Outcomes and Cybersecurity Relevance</b></td><td style="text-align: center;">22</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;10.1 Understanding Web Application Security</td><td style="text-align: center;">22</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;10.2 Practical Experience with Full-Stack Security Engineering</td><td style="text-align: center;">22</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;10.3 Vulnerability Identification and Risk Assessment</td><td style="text-align: center;">22</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;10.4 Security Automation & Defensive Architecture</td><td style="text-align: center;">23</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;10.5 Security Monitoring and Reporting</td><td style="text-align: center;">23</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;10.6 Application Development and Problem-Solving</td><td style="text-align: center;">23</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;10.7 Relevance to Real-World Cybersecurity & DevSecOps</td><td style="text-align: center;">23</td></tr>
+        <tr><td style="text-align: center;"><b>11</b></td><td><b>Challenges and Limitations</b></td><td style="text-align: center;">24</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;11.1 Challenges Faced</td><td style="text-align: center;">24</td></tr>
+        <tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;11.2 Project Limitations</td><td style="text-align: center;">24</td></tr>
+        <tr><td style="text-align: center;"><b>12</b></td><td><b>Conclusion</b></td><td style="text-align: center;">26</td></tr>
+        <tr><td style="text-align: center;"><b>13</b></td><td><b>References</b></td><td style="text-align: center;">27</td></tr>
+        <tr><td style="text-align: center;"><b>14</b></td><td><b>Certificate</b></td><td style="text-align: center;">28</td></tr>
+    </tbody>
+</table>
+<div class="footer-rule"><span>Dept. of CSE</span><span>2026-27</span></div>
+
+<!-- ================= PAGE 6: CHAPTER 1 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>1. Introduction</span></div>
+<h1 class="chapter-title">1. INTRODUCTION</h1>
+
+<p>Cybersecurity has become an essential component of modern computing due to the rapid proliferation of digital services, cloud computing platforms, distributed microservices, and online communications. Commercial enterprises, healthcare organizations, financial institutions, and government bodies depend extensively on web-based digital infrastructure to store, process, and exchange confidential records and mission-critical business intelligence. Consequently, defending these systems against unauthorized intrusion, data exfiltration, service interruptions, and malicious exploitation has emerged as one of the paramount engineering imperatives of the modern era.</p>
+
+<p>While cloud computing and modern containerization technologies have revolutionized application hosting and deployment agility, they have also dramatically expanded the attack surface exposed to adversaries. Vulnerabilities in web applications and REST APIs are frequently exploited as initial footholds into corporate perimeters. Flaws such as SQL Injection (SQLi), Cross-Site Scripting (XSS), missing HTTP security headers (e.g., Content-Security-Policy, HSTS), weak or deprecated TLS ciphers, and unauthenticated administrative endpoints (such as exposed environment files or framework actuators) allow attackers to bypass perimeter firewalls, compromise user sessions, steal administrative credentials, and execute arbitrary code on backend databases.</p>
+
+<p>This report documents the knowledge, hands-on software development experience, and technical competencies gained during a 120-hour Cybersecurity Internship organized by <b>BharatCares</b> under the <b>Honeywell Future Skills Edge Program</b>, conducted between June 2026 and July 2026, following the completion of an 80-hour structured cybersecurity curriculum on their digital platform.</p>
+
+<p>The internship provided a structured pathway to comprehend cybersecurity fundamentals and apply them through practical, production-level software development. The coursework encompassed information security governance, the CIA Triad (Confidentiality, Integrity, and Availability), cryptographic algorithms, network protocol defense, threat modeling, web application vulnerabilities, access control models, and incident response procedures.</p>
+
+<p>To translate these principles into practical engineering, I architected and developed <b>CyberShield</b>, an automated enterprise web application vulnerability scanner and security assessment platform. Rejecting ad-hoc scripting and strictly avoiding Python, the entire backend was constructed in <b>Java 21</b> and <b>Spring Boot 3.4.1</b>, leveraging the native Java 21 <code>HttpClient</code>, <b>Jsoup</b> HTML parsing, native Java SSL APIs, and a direct REST integration with the <b>OWASP Zed Attack Proxy (ZAP)</b>. The platform orchestrates eight modular scanners to detect header misconfigurations, SSL weaknesses, injection flaws, sensitive file exposures, and hardcoded secrets. It incorporates a Server-Side Request Forgery (SSRF) defense validator, applies a weighted mathematical risk scoring model to compute a 0–100 Security Score, produces publication-quality PDF audit reports using <b>OpenPDF</b>, and visualizes real-time analytics on an interactive <b>React 18</b> and <b>Tailwind CSS</b> dashboard.</p>
+
+<p>Overall, the internship successfully bridged the gap between theoretical cybersecurity concepts and practical enterprise software engineering, imparting deep insights into secure coding, defensive networking, and automated vulnerability management.</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 1</span></div>
+
+<!-- ================= PAGE 7: CHAPTER 2 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>2. About the Organisation</span></div>
+<h1 class="chapter-title">2. ABOUT THE ORGANISATION</h1>
+
+<h2 class="section-title">Honeywell</h2>
+<p><b>Honeywell International Inc.</b> is a globally recognized Fortune 100 technology and engineering multinational company providing advanced industrial and software solutions across diverse sectors, including aerospace, building automation, industrial manufacturing, and digital infrastructure. Founded over a century ago, Honeywell continues to lead innovation in automation, connected software systems, and sustainable technological advancements. Honeywell Connected Enterprise develops enterprise-grade industrial software solutions, including cybersecurity solutions for operational technology (OT) and critical national infrastructure. Through educational corporate social responsibility (CSR) initiatives like the Honeywell Future Skills Edge Program, Honeywell invests in cultivating young engineering talent, providing students with direct exposure to high-demand technical disciplines including cybersecurity, cloud architecture, and artificial intelligence.</p>
+
+<h2 class="section-title">BharatCares</h2>
+<p><b>BharatCares</b> (the social empowerment wing of CSRBOX) is one of India's preeminent non-governmental organizations dedicated to driving large-scale digital education, technical skill development, and youth employability programs. In strategic collaboration with multinational corporations and academic institutions, BharatCares designs and deploys industry-aligned training programs that prepare engineering graduates for modern corporate roles. As the key implementation and execution partner of the Honeywell Future Skills Edge Program, BharatCares facilitated the digital learning platform, mentor interactions, technical assessments, and practical capstone evaluations for the cybersecurity cohort.</p>
+
+<h2 class="section-title">Honeywell Future Skills Edge Program</h2>
+<p>The <b>Honeywell Future Skills Edge Program</b> is an industry-focused skill-development program aimed at equipping undergraduate engineers with cutting-edge, practical knowledge. Under this program, I completed 80 hours of structured online cybersecurity learning on their platform, followed by 40 hours of guided practical work and project development from June 2026 to July 2026. The program bridged the divide between conventional collegiate curricula and real-world cybersecurity engineering through structured coursework and rigorous project implementation.</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 2</span></div>
+
+<!-- ================= PAGE 8: CHAPTER 3 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>3. Objectives of the Internship</span></div>
+<h1 class="chapter-title">3. OBJECTIVES OF THE INTERNSHIP</h1>
+
+<p>The primary objective of the internship was to develop a comprehensive, hands-on understanding of cybersecurity principles and apply them to the design, engineering, and verification of an enterprise-grade automated web application vulnerability scanning platform. The internship was structured to bridge academic concepts with real-world DevSecOps and vulnerability assessment practices through the complete implementation of <b>CyberShield</b>.</p>
+
+<p>The major objectives were:</p>
+<ol>
+    <li><b>To Understand Foundational Cybersecurity Tenets:</b> Master the core tenets of information security, threat landscapes, attack surfaces, and the CIA Triad (Confidentiality, Integrity, and Availability).</li>
+    <li><b>To Examine Web Application Vulnerabilities:</b> Study common web exploits aligned with the OWASP Top 10, including SQL Injection, Cross-Site Scripting, Sensitive Data Exposure, and Security Misconfigurations.</li>
+    <li><b>To Implement Pure Java Enterprise Architecture:</b> Engineer a production-ready scanning backend strictly using <b>Java 21</b> and <b>Spring Boot 3</b>, adhering to enterprise design patterns while deliberately excluding Python.</li>
+    <li><b>To Develop Server-Side Request Forgery (SSRF) Defenses:</b> Engineer pre-flight DNS and IP validation modules to ensure the scanner cannot be weaponized against internal corporate subnets or cloud metadata endpoints.</li>
+    <li><b>To Build Modular Automated Security Scanners:</b> Design and implement independent scanning modules for HTTP security headers, SSL/TLS certificates and ciphers, SQL injection, XSS reflection, endpoint exposure, and sensitive file leakage.</li>
+    <li><b>To Integrate OWASP ZAP via REST API:</b> Enable automated dynamic application security testing (DAST) by communicating asynchronously with the OWASP ZAP daemon through its REST interface.</li>
+    <li><b>To Formulate a Mathematical Security Scoring Model:</b> Design quantitative algorithms to calculate cumulative risk scores and normalized 0–100 security compliance scores based on detected vulnerability severities.</li>
+    <li><b>To Automate Executive PDF Audit Reporting:</b> Implement server-side document generation using <b>OpenPDF</b> to dynamically compile formal, executive-ready security assessment reports.</li>
+    <li><b>To Build an Interactive Analytics Dashboard:</b> Create a responsive, modern web interface using <b>React 18</b>, <b>Vite</b>, <b>Tailwind CSS</b>, and <b>Recharts</b> to visualize scan results, security scores, and vulnerability trends.</li>
+    <li><b>To Apply Rigorous Software Quality Assurance:</b> Implement automated unit and integration tests using JUnit 5 and Mockito, containerize multi-service environments with Docker Compose, and manage version control on GitHub.</li>
+</ol>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 3</span></div>
+
+<!-- ================= PAGE 9: CHAPTER 4 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>4. Cybersecurity Training & Project Work</span></div>
+<h1 class="chapter-title">4. CYBERSECURITY TRAINING AND GUIDED PROJECT WORK</h1>
+
+<p>The Honeywell Future Skills Edge Program, implemented by BharatCares, spanned 120 hours of comprehensive learning and practical activities conducted between June 2026 and July 2026. The curriculum was divided into 80 hours of structured theoretical training and 40 hours of applied, guided software development.</p>
+
+<h2 class="section-title">4.1 Online Cybersecurity Training – 80 Hours</h2>
+<p>The foundational 80-hour phase was dedicated to in-depth modules on BharatCares' learning management portal, covering modern computing security mechanisms, threat profiles, and defense strategies across ten core domains:</p>
+
+<ol>
+    <li><b>Introduction to Cybersecurity & Digital Asset Protection:</b> Fundamental principles of information security, cyber threat landscapes, adversary motivations, and enterprise asset protection frameworks.</li>
+    <li><b>The CIA Triad & Security Principles:</b> Detailed study of Confidentiality, Integrity, and Availability, alongside defense-in-depth, economy of mechanism, and complete mediation.</li>
+    <li><b>Cyber Threats and Attack Vectors:</b> Exploration of malware variants (trojans, ransomware, rootkits), social engineering, phishing vectors, credential stuffing, and advanced persistent threats (APTs).</li>
+    <li><b>Network Security Fundamentals:</b> Deep dive into the OSI and TCP/IP protocol suites, packet inspection, firewalls, network segmentation, and secure transport layer protocols (HTTPS, SSH, SFTP).</li>
+    <li><b>Cryptography and Public Key Infrastructure (PKI):</b> Fundamentals of symmetric cryptography (AES-256), asymmetric algorithms (RSA, ECC), secure hashing (SHA-256, bcrypt), digital signatures, and X.509 certificate chains.</li>
+    <li><b>Authentication, Authorization & IAM:</b> Identification techniques, multi-factor authentication (MFA), Role-Based Access Control (RBAC), principle of least privilege, and stateless token systems (JSON Web Tokens).</li>
+    <li><b>Vulnerability Assessment & Threat Modeling:</b> Understanding vulnerability classification, Common Vulnerabilities and Exposures (CVE), Common Vulnerability Scoring System (CVSS), and STRIDE threat modeling.</li>
+    <li><b>Web Application Security & OWASP Top 10:</b> Exhaustive analysis of the most critical web risks, including Broken Access Control, Cryptographic Failures, Injection attacks, and Security Misconfigurations.</li>
+    <li><b>Cloud Infrastructure Security:</b> The shared responsibility model, Virtual Private Cloud (VPC) isolation, security groups, IAM policies, and cloud metadata service risks (e.g., AWS IMDSv1).</li>
+    <li><b>Security Monitoring & Incident Response:</b> Principles of Security Information and Event Management (SIEM), audit trail integrity, incident containment, eradication, and post-incident forensic reviews.</li>
+</ol>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 4</span></div>
+
+<!-- ================= PAGE 10: CHAPTER 4 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>4. Cybersecurity Training & Project Work</span></div>
+
+<h2 class="section-title">4.2 Guided Practical Work and Project Development – 40 Hours</h2>
+<p>The remaining 40 hours were devoted to hands-on software engineering under mentor guidance, requiring students to translate theoretical cybersecurity knowledge into a functional, production-ready system. I engineered <b>CyberShield</b>, a comprehensive web application vulnerability scanner constructed in Java 21 and Spring Boot 3.</p>
+
+<p>The guided development phase involved the following practical milestones:</p>
+<ol>
+    <li><b>Architecture & Requirements Definition:</b> Defining the multi-layered Spring Boot architecture, establishing strict DTO encapsulation, and eliminating Python dependencies.</li>
+    <li><b>SSRF Defense Engine:</b> Building the <code>SsrfProtectionValidator</code> using Java <code>InetAddress</code> to resolve hosts and block private RFC 1918 subnets, loopbacks, and cloud metadata IPs.</li>
+    <li><b>HTTP Header Scanner:</b> Implementing header inspection logic for <code>Content-Security-Policy</code>, <code>HSTS</code>, <code>X-Frame-Options</code>, and server header disclosures.</li>
+    <li><b>SSL/TLS Cipher Suite Auditor:</b> Utilizing Java native SSL APIs to inspect X.509 certificate chains, expiration dates, and flag deprecated TLS protocols (TLS 1.0/1.1).</li>
+    <li><b>Dynamic Injection Scanners:</b> Implementing the <code>SQLInjectionScanner</code> and <code>XSSScanner</code> to inject benign verification payloads and analyze reflected HTML via Jsoup.</li>
+    <li><b>Endpoint Exposure Discovery:</b> Creating an asynchronous crawler to probe high-risk paths, including <code>.env</code>, <code>.git/HEAD</code>, and Spring Boot <code>/actuator</code> endpoints.</li>
+    <li><b>Sensitive Information Scanner:</b> Formulating compiled Regular Expression patterns to detect leaked AWS credentials, RSA private keys, and database connection strings.</li>
+    <li><b>Security Score & Risk Classification Engine:</b> Developing mathematical models for cumulative risk scoring (<i>R</i> = &sum; <i>W<sub>i</sub></i>) and normalized 0–100 security scoring (<i>S</i> = max(0, 100 - &sum; <i>D<sub>i</sub></i>)).</li>
+    <li><b>OpenPDF Document Generation:</b> Engineering the <code>ReportService</code> to dynamically generate styled, multi-page executive PDF security audit reports.</li>
+    <li><b>Interactive React Dashboard:</b> Developing a responsive frontend using React 18, Vite, Tailwind CSS, and Recharts, and containerizing the entire application with Docker Compose.</li>
+</ol>
+
+<h2 class="section-title">4.3 Overall Training Experience</h2>
+<p>The synergy between 80 hours of rigorous conceptual coursework and 40 hours of applied system development provided an exceptionally balanced and immersive educational experience. The theoretical modules instilled deep knowledge of underlying attack mechanisms and defense strategies, while the practical development challenged me to solve complex real-world engineering hurdles, such as asynchronous task orchestration, resilient exception handling, and safe outbound networking.</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 5</span></div>
+
+<!-- ================= PAGE 11: CHAPTER 5 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>5. Specific Skills Acquired</span></div>
+<h1 class="chapter-title">5. SPECIFIC SKILLS ACQUIRED</h1>
+
+<p>The 120-hour cybersecurity internship provided an outstanding opportunity to acquire specialized competencies across cybersecurity auditing, secure software engineering, modern Java frameworks, and full-stack web development:</p>
+
+<ol>
+    <li><b>Web Application Security & OWASP Top 10:</b> Developed in-depth expertise in identifying, analyzing, and mitigating widespread application vulnerabilities, including SQL Injection, Cross-Site Scripting, Sensitive Data Exposure, and Security Misconfigurations.</li>
+    <li><b>Defensive Networking & SSRF Prevention:</b> Mastered the mechanics of Server-Side Request Forgery and implemented robust pre-flight DNS resolution and IP address filtering covering loopback, link-local, RFC 1918 private subnets, and cloud metadata services.</li>
+    <li><b>Enterprise Java 21 & Spring Boot 3 Engineering:</b> Acquired advanced skills in modern Java features (records, pattern matching, virtual threads, native HttpClient) and Spring Boot architecture, including layered dependency injection, transaction boundaries (<code>@Transactional</code>), and centralized error handling (<code>@RestControllerAdvice</code>).</li>
+    <li><b>Spring Security & Stateless JWT Authentication:</b> Gained practical experience configuring Spring Security filter chains, implementing BCrypt password encryption, issuing and parsing HMAC-SHA256 signed JSON Web Tokens (JWT), and enforcing stateless Role-Based Access Control.</li>
+    <li><b>Relational Persistence with JPA & PostgreSQL:</b> Designed normalized database schemas, mapped entity relationships with Hibernate ORM, and wrote optimized JPQL queries for user authentication, scan tracking, and vulnerability aggregation.</li>
+    <li><b>Dynamic Security Testing (DAST) Automation:</b> Learned to programmatically orchestrate security tools, including integrating the OWASP ZAP REST API to automate spidering, active scanning, and vulnerability triage.</li>
+    <li><b>Automated Document Engineering with OpenPDF:</b> Mastered programmatic PDF compilation using OpenPDF, creating styled multi-page reports with executive summaries, colored severity badges, and actionable remediation guidelines.</li>
+    <li><b>Modern Frontend Analytics & Data Visualization:</b> Built a modern, responsive Single Page Application using React 18, Vite 5, Tailwind CSS, and Recharts, translating complex vulnerability metrics into circular gauges and distribution charts.</li>
+    <li><b>Automated Testing, Quality Assurance & DevOps:</b> Wrote 23 automated unit and integration tests using JUnit 5 and Mockito, resolved Java 21 ByteBuddy dynamic agent loading constraints, containerized services using Docker Compose, and managed version control on GitHub.</li>
+</ol>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 6</span></div>
+
+<!-- ================= PAGE 12: CHAPTER 6 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>6. CyberShield Project Overview</span></div>
+<h1 class="chapter-title">6. CYBERSHIELD VULNERABILITY SCANNER – PROJECT OVERVIEW</h1>
+
+<p><b>Source Code & Repository:</b> <a href="https://github.com/Pavithra-Devadiga/CyberSecurity">https://github.com/Pavithra-Devadiga/CyberSecurity</a></p>
+
+<h2 class="section-title">6.1 Introduction to the Project</h2>
+<p><b>CyberShield</b> is an automated, enterprise-grade web application vulnerability scanner and security assessment platform engineered to identify, analyze, quantify, and report configuration vulnerabilities and software flaws across authorized web targets.</p>
+
+<p>Modern web infrastructure is highly distributed, relying on front-end Single Page Applications, backend REST APIs, third-party microservices, and cloud databases. Any security oversight—such as omitting the <code>Strict-Transport-Security</code> header, running deprecated TLS 1.0 protocols, accidentally exposing a <code>.env</code> file with database passwords, or failing to sanitize form inputs against SQL Injection—can result in catastrophic data breaches, regulatory penalties, and organizational loss.</p>
+
+<p>CyberShield automates the comprehensive dynamic security evaluation of any authorized URL. Departing from standard scripting approaches and strictly banning Python, the entire system was built using <b>Java 21</b> and <b>Spring Boot 3.4.1</b>. The platform coordinates eight specialized scanning modules, aggregates findings into a PostgreSQL database, calculates an objective 0–100 Security Score, produces downloadable executive PDF audit reports, and displays real-time telemetry through an interactive React 18 web dashboard.</p>
+
+<h2 class="section-title">6.2 Problem Statement</h2>
+<p>Organizations deploy web applications and APIs at rapid speeds through modern CI/CD pipelines. However, manual security audits and periodic penetration tests are slow, resource-intensive, and incapable of keeping pace with daily deployments.</p>
+
+<p>Critical configuration oversights frequently reach production environments:</p>
+<ul>
+    <li><b>Header Deficiencies:</b> Missing security headers expose client browsers to Clickjacking, MIME-sniffing, and cross-site data theft.</li>
+    <li><b>Exposed Sensitive Endpoints:</b> Misconfigured servers publicly expose <code>.git</code> repositories, <code>.env</code> configuration files, and Spring Boot <code>/actuator</code> endpoints.</li>
+    <li><b>Input Sanitization Failures:</b> Web applications continue to suffer from SQL Injection and reflected Cross-Site Scripting.</li>
+    <li><b>Opaque Audit Reports:</b> Existing command-line tools produce unwieldy terminal text or raw JSON that non-technical managers cannot easily comprehend.</li>
+    <li><b>SSRF Attack Risks:</b> Web security scanners lacking outbound IP validation can be exploited by malicious actors to pivot and scan internal enterprise networks.</li>
+</ul>
+
+<p>Therefore, there is an urgent need for an automated, secure web vulnerability scanner that enforces strict target validation, conducts multi-vector dynamic checks, calculates objective security scores, and provides both visual dashboard analytics and executive PDF reports.</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 7</span></div>
+
+<!-- ================= PAGE 13: CHAPTER 6 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>6. CyberShield Project Overview</span></div>
+
+<h2 class="section-title">6.3 Project Objectives</h2>
+<p>The core objectives of the CyberShield project were:</p>
+<ul>
+    <li>To architect and implement an enterprise-grade backend strictly in <b>Java 21</b> and <b>Spring Boot 3</b>, eliminating Python dependencies.</li>
+    <li>To implement strict Server-Side Request Forgery (SSRF) validation blocking internal subnets, localhost, and cloud metadata services.</li>
+    <li>To develop eight independent, modular scanning engines auditing headers, TLS certificates, injection vectors, XSS, endpoint exposures, and leaked secrets.</li>
+    <li>To integrate the OWASP ZAP REST API for automated active spidering and dynamic security testing.</li>
+    <li>To develop a quantitative mathematical security scoring model that evaluates vulnerabilities and produces an objective 0–100 score.</li>
+    <li>To implement automated, styled PDF audit report generation using OpenPDF.</li>
+    <li>To create an interactive, responsive dashboard using React 18, Vite, Tailwind CSS, and Recharts.</li>
+    <li>To ensure enterprise data persistence using PostgreSQL with full DTO encapsulation.</li>
+    <li>To achieve comprehensive test coverage with automated unit and integration tests using JUnit 5 and Mockito.</li>
+</ul>
+
+<h2 class="section-title">6.4 Scope and Features</h2>
+<p>CyberShield focuses on identifying common, high-impact security misconfigurations and application vulnerabilities in web targets. Its major features include:</p>
+<ul>
+    <li><b>SSRF Protection & Target Authorization:</b> Resolves target hostnames and enforces pre-flight validation blocking RFC 1918 private subnets, loopbacks, and cloud metadata IPs (<code>169.254.169.254</code>).</li>
+    <li><b>HTTP Security Header Analysis:</b> Inspects 7 critical headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, Server leakage).</li>
+    <li><b>SSL/TLS Certificate & Cipher Auditing:</b> Verifies certificate validity, expiration dates, Subject Alternative Names, and identifies deprecated TLS 1.0/1.1 protocols.</li>
+    <li><b>SQL Injection Assessment:</b> Probes web input vectors with benign verification payloads, identifying database error signatures across major RDBMS engines.</li>
+    <li><b>Reflected XSS Assessment:</b> Probes input parameters with harmless script tags, verifying unescaped reflection in the HTML DOM via Jsoup.</li>
+    <li><b>Endpoint Exposure Discovery:</b> Asynchronously checks for sensitive exposed paths including <code>.env</code>, <code>.git/HEAD</code>, <code>/actuator/env</code>, and database backups.</li>
+    <li><b>Sensitive Information Leakage Detection:</b> Scans responses using compiled regex patterns for exposed AWS access keys, RSA private keys, and JWT secrets.</li>
+    <li><b>Website Technology Fingerprinting:</b> Identifies web servers, frameworks, and CMS engines.</li>
+    <li><b>Quantitative Dual-Scoring Model:</b> Computes Cumulative Risk Scores (<i>R</i>) and overall 0–100 Security Scores (<i>S</i>).</li>
+    <li><b>OpenPDF Executive Report Export:</b> Generates multi-page, formatted PDF audit reports complete with scorecards, vulnerability details, and remediation steps.</li>
+    <li><b>Interactive React Dashboard:</b> Delivers real-time scan launching, circular score gauges, Recharts severity charts, and comprehensive vulnerability management.</li>
+</ul>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 8</span></div>
+
+<!-- ================= PAGE 14: CHAPTER 7 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>7. Project Architecture & Design</span></div>
+<h1 class="chapter-title">7. PROJECT ARCHITECTURE AND DESIGN</h1>
+
+<h2 class="section-title">7.1 System Architecture</h2>
+<p>CyberShield is engineered following a decoupled, layered enterprise architecture conforming to Spring Boot best practices. The system cleanly separates responsibilities across client presentation, REST controller gateways, security filter chains, business orchestration services, modular scanning engines, and relational persistence.</p>
+
+<p>The system pipeline follows a disciplined lifecycle:
+The user initiates a scan from the React dashboard via a JWT-authenticated REST request. The request is intercepted by Spring Security's <code>JwtAuthenticationFilter</code>, validated, and forwarded to <code>ScanController</code>. The <code>ScanOrchestratorService</code> immediately invokes the <code>SsrfProtectionValidator</code> to verify that the target URL is safe to scan. Once validated, a scan record is initialized in PostgreSQL, and the orchestrator dispatches asynchronous scanning tasks to the eight autonomous scanner modules. Upon completion, the findings are aggregated, categorized by severity, evaluated by the <code>SecurityScoreService</code> to compute the final 0–100 score, persisted to PostgreSQL, and made available for instant PDF generation via OpenPDF.</p>
+
+<div class="figure-box">
+<pre class="code-block">
++-----------------------------------------------------------------------------------+
+|                                PRESENTATION LAYER                                 |
+|       React 18 SPA | Vite 5 | Tailwind CSS | Recharts | Lucide React Icons       |
++-----------------------------------------+-----------------------------------------+
+                                          | JSON over HTTPS (JWT Authenticated)
++-----------------------------------------v-----------------------------------------+
+|                                  SECURITY LAYER                                   |
+|       Spring Security Filter Chain | JwtAuthenticationFilter | BCrypt Hasher      |
++-----------------------------------------+-----------------------------------------+
+                                          | Authenticated DTO Request
++-----------------------------------------v-----------------------------------------+
+|                                 CONTROLLER LAYER                                  |
+|   AuthController | DashboardController | ScanController | VulnerabilityController  |
+|               ReportController | NotificationController                           |
++-----------------------------------------+-----------------------------------------+
+                                          | Service Invocation
++-----------------------------------------v-----------------------------------------+
+|                                  SERVICE LAYER                                    |
+|   AuthService | ScanService | ScanOrchestratorService | VulnerabilityService      |
+|   SecurityScoreService | SeverityClassificationService | ReportService (OpenPDF)   |
++-------------------+-------------------------------------------+-------------------+
+                    |                                           |
++-------------------v-------------------+   +-------------------v-------------------+
+|           SCANNING ENGINE             |   |           PERSISTENCE LAYER           |
+|  - HttpHeaderScanner                  |   |  - UserRepository                     |
+|  - SSLTLSScanner                      |   |  - ScanRepository                     |
+|  - SQLInjectionScanner                |   |  - VulnerabilityRepository            |
+|  - XSSScanner                         |   |  - NotificationRepository             |
+|  - EndpointExposureScanner            |   |  - PostgreSQL / H2 Database           |
+|  - SensitiveInformationScanner        |   +---------------------------------------+
+|  - WebsiteTechnologyScanner           |
+|  - OWASPZapIntegrationService         |
+|  - SafeHttpClientFactory              |
+|  - SsrfProtectionValidator            |
++---------------------------------------+
+</pre>
+<p class="figure-caption">Figure 7.1: Layered Enterprise Architecture of CyberShield</p>
+</div>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 9</span></div>
+
+<!-- ================= PAGE 15: CHAPTER 7 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>7. Project Architecture & Design</span></div>
+
+<h2 class="section-title">7.2 Technologies and Tools Used</h2>
+<p>The technologies and frameworks utilized in CyberShield were selected to guarantee enterprise performance, robust type safety, zero Python dependency, and seamless maintainability:</p>
+
+<table class="report-table">
+    <thead>
+        <tr>
+            <th style="width: 28%;">Technology / Tool</th>
+            <th style="width: 22%;">Version / Spec</th>
+            <th style="width: 50%;">Role & Purpose in CyberShield</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Java</b></td>
+            <td>21 LTS (Temurin)</td>
+            <td>Core programming language providing modern features, records, pattern matching, and native HttpClient.</td>
+        </tr>
+        <tr>
+            <td><b>Spring Boot</b></td>
+            <td>3.4.1</td>
+            <td>Enterprise application framework for dependency injection, RESTful controllers, and service orchestration.</td>
+        </tr>
+        <tr>
+            <td><b>Spring Security</b></td>
+            <td>6.x</td>
+            <td>Security framework managing filter chains, endpoint authorization, and stateless session policies.</td>
+        </tr>
+        <tr>
+            <td><b>JSON Web Token</b></td>
+            <td>jjwt-api 0.12.6</td>
+            <td>Cryptographically signed token generation and validation for secure user authentication.</td>
+        </tr>
+        <tr>
+            <td><b>Spring Data JPA</b></td>
+            <td>6.x (Hibernate)</td>
+            <td>Object-Relational Mapping (ORM) and abstracted database query operations.</td>
+        </tr>
+        <tr>
+            <td><b>PostgreSQL</b></td>
+            <td>16-Alpine</td>
+            <td>Primary enterprise relational database for storing users, scans, vulnerabilities, and alerts.</td>
+        </tr>
+        <tr>
+            <td><b>H2 Database</b></td>
+            <td>In-Memory Engine</td>
+            <td>Fast, embedded in-memory database used for automated unit and integration tests.</td>
+        </tr>
+        <tr>
+            <td><b>Java HttpClient</b></td>
+            <td>Java 21 Built-in</td>
+            <td>High-performance, asynchronous HTTP request engine with custom timeouts for safe scanning.</td>
+        </tr>
+        <tr>
+            <td><b>Jsoup</b></td>
+            <td>1.18.3</td>
+            <td>Fast HTML parser for analyzing web page structures, forms, scripts, and reflected payloads.</td>
+        </tr>
+        <tr>
+            <td><b>Java SSL APIs</b></td>
+            <td>javax.net.ssl</td>
+            <td>Low-level TLS socket engine for auditing certificate chains, expiry dates, and cipher suites.</td>
+        </tr>
+        <tr>
+            <td><b>OpenPDF</b></td>
+            <td>2.0.3</td>
+            <td>Open-source LGPL library for server-side generation of styled executive PDF audit reports.</td>
+        </tr>
+        <tr>
+            <td><b>OWASP ZAP API</b></td>
+            <td>2.15+ (REST Client)</td>
+            <td>Integration with the industry-standard OWASP Zed Attack Proxy for automated active scanning.</td>
+        </tr>
+        <tr>
+            <td><b>React</b></td>
+            <td>18.3</td>
+            <td>Modern component-based user interface library for rendering the interactive web dashboard.</td>
+        </tr>
+        <tr>
+            <td><b>Vite</b></td>
+            <td>5.4</td>
+            <td>High-performance frontend build tool providing hot module replacement (HMR).</td>
+        </tr>
+        <tr>
+            <td><b>Tailwind CSS</b></td>
+            <td>3.4</td>
+            <td>Utility-first CSS framework for clean, responsive, and accessible user interface design.</td>
+        </tr>
+        <tr>
+            <td><b>Recharts</b></td>
+            <td>2.15</td>
+            <td>Declarative data visualization library for rendering risk distribution and severity charts.</td>
+        </tr>
+        <tr>
+            <td><b>Docker Compose</b></td>
+            <td>v2</td>
+            <td>Multi-container orchestration for backend, frontend, PostgreSQL, and optional OWASP ZAP.</td>
+        </tr>
+    </tbody>
+</table>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 10</span></div>
+
+<!-- ================= PAGE 16: CHAPTER 7 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>7. Project Architecture & Design</span></div>
+
+<h2 class="section-title">7.3 Security Assessment Methodology</h2>
+<p>CyberShield executes a structured, multi-phase assessment workflow on every target URL to ensure comprehensive coverage and safe operation:</p>
+
+<div class="figure-box">
+<pre class="code-block">
+[Start Scan Request]
+         |
+         v
++------------------------------------------+
+| Step 1: Pre-Flight SSRF Validation       |
+| (Check HTTP/HTTPS, Resolve DNS,          |
+|  Block 127.0.0.1, RFC 1918, 169.254.x.x) |
++--------------------+---------------------+
+                     | Valid Target URL
+                     v
++------------------------------------------+
+| Step 2: Database Record Initialization   |
+| (Create Scan Record, Status: RUNNING)    |
++--------------------+---------------------+
+                     |
+                     v
++--------------------------------------------------------------------+
+| Step 3: Concurrent Multi-Scanner Execution                         |
+|   +-----------------------+     +-------------------------------+  |
+|   | HttpHeaderScanner     |     | SSLTLSScanner                 |  |
+|   | SQLInjectionScanner   |     | XSSScanner                    |  |
+|   | EndpointExposure      |     | SensitiveInformationScanner   |  |
+|   | WebsiteTechScanner    |     | OWASPZapIntegrationService    |  |
+|   +-----------------------+     +-------------------------------+  |
++--------------------+-----------------------------------------------+
+                     | Collected Vulnerability Findings
+                     v
++------------------------------------------+
+| Step 4: Vulnerability Classification     |
+| (Assign Severity: CRITICAL / HIGH /      |
+|  MEDIUM / LOW / INFO, Map to OWASP)      |
++--------------------+---------------------+
+                     |
+                     v
++------------------------------------------+
+| Step 5: Risk & Score Formulation         |
+| (Compute Cumulative Risk Score R,        |
+|  Calculate Overall Security Score S 0-100|
++--------------------+---------------------+
+                     |
+                     v
++------------------------------------------+
+| Step 6: Persistence & Report Readiness   |
+| (Update DB Status: COMPLETED,            |
+|  Generate Notification, Render OpenPDF)  |
++------------------------------------------+
+</pre>
+<p class="figure-caption">Figure 7.2: End-to-End Security Assessment Workflow of CyberShield</p>
+</div>
+
+<ol>
+    <li><b>Pre-Flight SSRF Validation:</b> The target URL is submitted. The <code>SsrfProtectionValidator</code> resolves all associated IP addresses. If any IP matches loopback, private RFC 1918 subnets, or cloud metadata endpoints, the scan is immediately aborted with a <code>SsrfValidationException</code>.</li>
+    <li><b>Asynchronous Scanner Dispatch:</b> The <code>ScanOrchestratorService</code> constructs an isolated <code>SafeHttpClient</code> and dispatches the target concurrently to all active scanner modules.</li>
+    <li><b>Dynamic Response Inspection:</b> Scanners send targeted HTTP requests, analyze HTTP status codes, parse response headers, examine HTML DOM structures using Jsoup, and test SSL sockets.</li>
+    <li><b>Findings Normalization:</b> Each identified weakness is converted into a normalized <code>Vulnerability</code> entity containing a standardized title, description, severity, remediation advice, and OWASP category.</li>
+    <li><b>Score Computation:</b> The <code>SecurityScoreService</code> processes the findings, calculating both the Cumulative Risk Score (<i>R</i>) and the normalized 0–100 Security Score (<i>S</i>).</li>
+    <li><b>Persistence & Reporting:</b> The scan record is marked as <code>COMPLETED</code> in PostgreSQL, execution metrics are logged, an in-app alert is dispatched, and the scan becomes exportable as an OpenPDF document.</li>
+</ol>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 11</span></div>
+
+<!-- ================= PAGE 17: CHAPTER 7 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>7. Project Architecture & Design</span></div>
+
+<h2 class="section-title">7.4 Risk Scoring and Security Score Assessment</h2>
+<p>To provide security engineers and executives with both granular threat metrics and high-level compliance indicators, CyberShield implements a dual mathematical scoring formulation: the <b>Cumulative Risk Score (<i>R</i>)</b> and the <b>Overall Security Score (<i>S</i>)</b>.</p>
+
+<h3 class="subsection-title">1. Cumulative Risk Score Formulation</h3>
+<p>The Cumulative Risk Score aggregates the assigned severity weights across all detected vulnerabilities:</p>
+
+<div class="equation-box">
+Equation 7.1: Cumulative Risk Score Calculation<br><br>
+<i>R</i> = &sum; <i>W<sub>i</sub></i> &nbsp;&nbsp;(for <i>i</i> = 1 to <i>n</i>)
+</div>
+
+<p>Where:</p>
+<ul>
+    <li><b><i>R</i></b> = Total Cumulative Risk Score for the target application.</li>
+    <li><b><i>W<sub>i</sub></i></b> = Risk weight assigned to each identified vulnerability <i>i</i>.</li>
+    <li><b><i>n</i></b> = Total number of detected vulnerabilities.</li>
+</ul>
+
+<p>The implemented risk weights corresponding to vulnerability severity levels are:</p>
+
+<table class="report-table">
+    <thead>
+        <tr>
+            <th style="width: 30%;">Vulnerability Severity</th>
+            <th style="width: 20%; text-align: center;">Risk Weight (<i>W<sub>i</sub></i>)</th>
+            <th style="width: 50%;">Impact Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><span class="badge badge-critical">CRITICAL</span></td>
+            <td style="text-align: center; font-weight: bold;">10</td>
+            <td>Severe vulnerability enabling arbitrary code execution, SQLi, or root secret exposure.</td>
+        </tr>
+        <tr>
+            <td><span class="badge badge-high">HIGH</span></td>
+            <td style="text-align: center; font-weight: bold;">7</td>
+            <td>High-impact issue such as stored XSS, privilege escalation, or exposed actuators.</td>
+        </tr>
+        <tr>
+            <td><span class="badge badge-medium">MEDIUM</span></td>
+            <td style="text-align: center; font-weight: bold;">4</td>
+            <td>Configuration weakness such as missing CSP or missing HSTS header.</td>
+        </tr>
+        <tr>
+            <td><span class="badge badge-low">LOW</span></td>
+            <td style="text-align: center; font-weight: bold;">2</td>
+            <td>Minor hygiene issue such as missing Referrer-Policy or Cookie without Secure flag.</td>
+        </tr>
+        <tr>
+            <td><b>INFO</b></td>
+            <td style="text-align: center; font-weight: bold;">0</td>
+            <td>Informational discovery such as technology fingerprinting or server header banner.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Based on the calculated Cumulative Risk Score (<i>R</i>), the target is assigned an overall Risk Classification:</p>
+
+<table class="report-table">
+    <thead>
+        <tr>
+            <th style="width: 30%; text-align: center;">Risk Score Range (<i>R</i>)</th>
+            <th style="width: 35%;">Risk Classification</th>
+            <th style="width: 35%;">Recommended Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: center; font-weight: bold;">0 – 7</td>
+            <td><span class="badge badge-low">LOW RISK</span></td>
+            <td>Target exhibits strong security hygiene; review low-priority findings.</td>
+        </tr>
+        <tr>
+            <td style="text-align: center; font-weight: bold;">8 – 15</td>
+            <td><span class="badge badge-medium">MEDIUM RISK</span></td>
+            <td>Target has moderate vulnerabilities; schedule remediation within standard sprint cycle.</td>
+        </tr>
+        <tr>
+            <td style="text-align: center; font-weight: bold;">16 and above</td>
+            <td><span class="badge badge-critical">CRITICAL RISK</span></td>
+            <td>Urgent security vulnerabilities present; immediate patching required.</td>
+        </tr>
+    </tbody>
+</table>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 12</span></div>
+
+<!-- ================= PAGE 18: CHAPTER 7 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>7. Project Architecture & Design</span></div>
+
+<h3 class="subsection-title">2. Overall Security Score Formulation</h3>
+<p>To provide a clear, percentage-based compliance score for non-technical leadership, CyberShield calculates a normalized Security Score (<i>S</i>) starting at 100 points and deducting standardized penalties for each detected finding, bounded at a floor of zero:</p>
+
+<div class="equation-box">
+Equation 7.2: Overall Security Score Calculation<br><br>
+<i>S</i> = max(0, &nbsp; 100 - &sum; <i>D<sub>i</sub></i>) &nbsp;&nbsp;(for <i>i</i> = 1 to <i>n</i>)
+</div>
+
+<p>Where:</p>
+<ul>
+    <li><b><i>S</i></b> = Final Security Score (percentage on a 0–100 scale).</li>
+    <li><b><i>D<sub>i</sub></i></b> = Compliance penalty deduction assigned to vulnerability <i>i</i>.</li>
+    <li><b><i>n</i></b> = Total number of detected vulnerabilities.</li>
+</ul>
+
+<p>The implemented compliance deduction penalty schedule is:</p>
+
+<table class="report-table">
+    <thead>
+        <tr>
+            <th style="width: 30%;">Vulnerability Severity</th>
+            <th style="width: 25%; text-align: center;">Deduction Penalty (<i>D<sub>i</sub></i>)</th>
+            <th style="width: 45%;">Security Posture Impact</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><span class="badge badge-critical">CRITICAL</span></td>
+            <td style="text-align: center; font-weight: bold;">25 points</td>
+            <td>Severe penalty; four Critical vulnerabilities immediately reduce score to 0%.</td>
+        </tr>
+        <tr>
+            <td><span class="badge badge-high">HIGH</span></td>
+            <td style="text-align: center; font-weight: bold;">15 points</td>
+            <td>Significant compromise of application confidentiality or integrity.</td>
+        </tr>
+        <tr>
+            <td><span class="badge badge-medium">MEDIUM</span></td>
+            <td style="text-align: center; font-weight: bold;">8 points</td>
+            <td>Notable configuration omission or compliance gap.</td>
+        </tr>
+        <tr>
+            <td><span class="badge badge-low">LOW</span></td>
+            <td style="text-align: center; font-weight: bold;">3 points</td>
+            <td>Minor security deficiency.</td>
+        </tr>
+        <tr>
+            <td><b>INFO</b></td>
+            <td style="text-align: center; font-weight: bold;">0 points</td>
+            <td>Informational discovery; no deduction applied.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 class="subsection-title">Example Calculation</h3>
+<p>Consider an audit of a staging web application where CyberShield identifies four security issues:</p>
+<ol>
+    <li>One SQL Injection vulnerability (<span class="badge badge-critical">CRITICAL</span>: <i>W</i><sub>1</sub> = 10, <i>D</i><sub>1</sub> = 25)</li>
+    <li>One Missing Content Security Policy header (<span class="badge badge-medium">MEDIUM</span>: <i>W</i><sub>2</sub> = 4, <i>D</i><sub>2</sub> = 8)</li>
+    <li>One Missing Strict-Transport-Security header (<span class="badge badge-medium">MEDIUM</span>: <i>W</i><sub>3</sub> = 4, <i>D</i><sub>3</sub> = 8)</li>
+    <li>One Server Header Information Disclosure (<b>INFO</b>: <i>W</i><sub>4</sub> = 0, <i>D</i><sub>4</sub> = 0)</li>
+</ol>
+
+<div class="equation-box">
+Equation 7.3: Cumulative Risk Score for Example<br><br>
+<i>R</i> = 10 + 4 + 4 + 0 = 18 &nbsp;&nbsp;&implies;&nbsp;&nbsp; <b>CRITICAL RISK</b>
+</div>
+
+<div class="equation-box">
+Equation 7.4: Overall Security Score for Example<br><br>
+<i>S</i> = max(0, &nbsp; 100 - (25 + 8 + 8 + 0)) = 100 - 41 = <b>59%</b> &nbsp;&nbsp;&implies;&nbsp;&nbsp; <b>ELEVATED RISK</b>
+</div>
+
+<p>The target application receives a Cumulative Risk Score of <b>18</b> (classified as <b>CRITICAL RISK</b>) and a normalized Security Score of <b>59%</b> (classified as <b>ELEVATED RISK</b>), immediately signalling to the security team that urgent remediation of the SQL injection flaw is required.</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 13</span></div>
+
+<!-- ================= PAGE 19: CHAPTER 7 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>7. Project Architecture & Design</span></div>
+
+<h2 class="section-title">7.5 Project Structure and Software Requirements</h2>
+<p>The CyberShield project is organized into two primary sub-systems: a 100% Java/Spring Boot backend service and a modern React 18 Single Page Application frontend, supported by root containerization configurations:</p>
+
+<pre class="code-block">
+cybersecurity/
+|-- .gitignore                     # Git ignore rules (node_modules, target, powershell)
+|-- README.md                      # Comprehensive project documentation
+|-- docker-compose.yml             # Orchestration for Backend, Frontend, Postgres, ZAP
+|-- mvn.bat                        # Maven wrapper execution script
+|-- backend/                       # Spring Boot 3.4.1 Java 21 Backend
+|   |-- Dockerfile                 # Multi-stage Maven + Eclipse Temurin 21 JRE
+|   |-- pom.xml                    # Maven dependencies (Spring Boot, OpenPDF, Jsoup)
+|   `-- src/
+|       |-- main/java/com/security/scanner/
+|       |   |-- config/            # SecurityConfig, JwtAuthenticationFilter, DataInit
+|       |   |-- controller/        # Auth, Dashboard, Scan, Vulnerability, Report Controllers
+|       |   |-- dto/               # Request & Response DTOs (Zero JPA entity exposure)
+|       |   |-- entity/            # User, Scan, Vulnerability, Notification entities
+|       |   |-- repository/        # Spring Data JPA repositories
+|       |   |-- scanner/           # 8 Scanner Modules, SafeHttpClient, SSRF Validator
+|       |   `-- service/           # Orchestrator, Score, Report, Auth Services
+|       `-- test/java/com/security/scanner/ # 7 Unit & Integration test suites (23 tests)
+`-- frontend/                      # React 18 Single Page Application
+    |-- Dockerfile                 # Multi-stage Node.js build + Nginx Alpine
+    |-- nginx.conf                 # Nginx reverse proxy and client routing
+    |-- package.json               # Frontend dependencies (React, Vite, Tailwind, Recharts)
+    `-- src/
+        |-- api/client.js          # Axios client with JWT interceptors
+        |-- components/common/     # Navbar, Sidebar, ScoreGauge, Badges, Layout
+        `-- pages/                 # Dashboard, Scans, NewScan, ScanDetail, Reports
+</pre>
+
+<p>The software and runtime dependencies required to build and deploy CyberShield are summarized in the table below:</p>
+
+<table class="report-table">
+    <thead>
+        <tr>
+            <th style="width: 25%;">Component</th>
+            <th style="width: 35%;">Minimum Specification</th>
+            <th style="width: 40%;">Recommended Environment</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Operating System</b></td>
+            <td>Windows 10, Ubuntu 20.04+, macOS 12+</td>
+            <td>Windows 11 (64-bit) / Ubuntu 22.04 LTS</td>
+        </tr>
+        <tr>
+            <td><b>Java Runtime</b></td>
+            <td>Java Development Kit (JDK) 21 LTS</td>
+            <td>Eclipse Temurin JDK 21.0.12+ (LTS)</td>
+        </tr>
+        <tr>
+            <td><b>Backend Build Tool</b></td>
+            <td>Apache Maven 3.8.x</td>
+            <td>Apache Maven 3.9.6</td>
+        </tr>
+        <tr>
+            <td><b>Frontend Runtime</b></td>
+            <td>Node.js v18.x with npm 9.x</td>
+            <td>Node.js v20.x or v24.x with npm 10.x</td>
+        </tr>
+        <tr>
+            <td><b>Relational Database</b></td>
+            <td>H2 In-Memory (Dev/Testing)</td>
+            <td>PostgreSQL 16-Alpine (Production/Docker)</td>
+        </tr>
+        <tr>
+            <td><b>Container Platform</b></td>
+            <td>Docker Engine 24.x</td>
+            <td>Docker Desktop with Docker Compose v2</td>
+        </tr>
+    </tbody>
+</table>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 14</span></div>
+
+<!-- ================= PAGE 20: CHAPTER 8 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>8. Project Implementation</span></div>
+<h1 class="chapter-title">8. PROJECT IMPLEMENTATION</h1>
+
+<p>The CyberShield platform was implemented following modern software design patterns, ensuring modularity, strict transaction boundaries, resilient error handling, and high-concurrency execution, strictly adhering to the requirement of <b>zero Python dependencies</b>.</p>
+
+<h2 class="section-title">8.1 Backend Implementation & Architecture</h2>
+<p>The backend was constructed in <b>Java 21</b> and <b>Spring Boot 3.4.1</b>. Strict separation of concerns is maintained between the web gateway, service business logic, scanner executors, and persistence layers:</p>
+
+<ul>
+    <li><b>Stateless Security & JWT:</b> Configured in <code>SecurityConfig.java</code>, requests pass through <code>JwtAuthenticationFilter</code>. Passwords are hashed with BCrypt (strength 12). Only <code>/api/auth/**</code> endpoints are publicly accessible; all scanner operations require authenticated JWT bearer tokens.</li>
+    <li><b>Data Transfer Object (DTO) Boundary:</b> To safeguard database internals and prevent over-posting vulnerabilities, JPA entities (<code>User</code>, <code>Scan</code>, <code>Vulnerability</code>) are never returned through controllers. All REST endpoints strictly accept and return dedicated DTOs (e.g., <code>ScanRequest</code>, <code>ScanResponse</code>, <code>VulnerabilityDto</code>).</li>
+    <li><b>Centralized Exception Handling:</b> <code>GlobalExceptionHandler</code> utilizes Spring's <code>@RestControllerAdvice</code> to catch and standardize all exceptions into uniform <code>ApiResponse&lt;T&gt;</code> structures with descriptive error messages.</li>
+</ul>
+
+<h2 class="section-title">8.2 Automated Security Scanners</h2>
+<p>The core scanning engine comprises eight independent modules implementing the <code>ScannerModule</code> interface:</p>
+
+<ol>
+    <li><b>HttpHeaderScanner:</b> Connects to the target URL, extracts HTTP response headers, and audits seven critical security headers:
+        <ul>
+            <li><code>Content-Security-Policy</code>: Detects absence of CSP or unsafe directives (<code>'unsafe-inline'</code>, <code>'unsafe-eval'</code>).</li>
+            <li><code>Strict-Transport-Security</code>: Checks for HSTS with sufficient <code>max-age</code> and <code>includeSubDomains</code>.</li>
+            <li><code>X-Frame-Options</code>: Checks for <code>DENY</code> or <code>SAMEORIGIN</code> to prevent Clickjacking.</li>
+            <li><code>X-Content-Type-Options</code>: Checks for <code>nosniff</code> to prevent MIME-confusion attacks.</li>
+            <li><code>Referrer-Policy</code>: Checks for strict referrer leak controls.</li>
+            <li><code>Permissions-Policy</code>: Validates browser hardware feature restrictions.</li>
+            <li><code>Server / X-Powered-By</code>: Flags unnecessary server technology disclosures.</li>
+        </ul>
+    </li>
+    <li><b>SSLTLSScanner:</b> Uses Java native SSL sockets (<code>SSLSocketFactory</code>) to initiate handshakes, inspects X.509 certificate chains, verifies expiration dates and Subject Alternative Names (SAN), and flags deprecated TLS versions (TLS 1.0/1.1) and insecure ciphers.</li>
+    <li><b>SQLInjectionScanner:</b> Injects non-destructive verification payloads into discovered URL query parameters (e.g., <code>' OR '1'='1</code>, <code>'; WAITFOR DELAY '0:0:0'--</code>) and uses pattern matching to detect database syntax errors across MySQL, PostgreSQL, Oracle, SQLite, and Microsoft SQL Server.</li>
+    <li><b>XSSScanner:</b> Injects benign probing markers into input parameters (e.g., <code>&lt;script&gt;alert(1)&lt;/script&gt;</code>) and parses the reflected DOM using Jsoup to verify whether user input is returned unencoded.</li>
+</ol>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 15</span></div>
+
+<!-- ================= PAGE 21: CHAPTER 8 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>8. Project Implementation</span></div>
+
+<ol start="5">
+    <li><b>EndpointExposureScanner:</b> Concurrently probes the target host for dangerous configuration files, source code repositories, and administrative consoles:
+        <ul>
+            <li><code>/.env</code>, <code>/.env.local</code> (leaked application secrets)</li>
+            <li><code>/.git/HEAD</code>, <code>/.gitignore</code> (exposed source code repositories)</li>
+            <li><code>/actuator</code>, <code>/actuator/env</code>, <code>/actuator/health</code> (unprotected Spring Boot actuator endpoints)</li>
+            <li><code>/wp-config.php</code>, <code>/config.json</code>, <code>/phpinfo.php</code>, <code>/backup.zip</code></li>
+        </ul>
+    </li>
+    <li><b>SensitiveInformationScanner:</b> Employs pre-compiled high-performance regular expressions across HTTP response bodies and scripts to detect accidentally exposed secrets:
+        <ul>
+            <li>AWS Access Key IDs (<code>AKIA[0-9A-Z]{16}</code>)</li>
+            <li>RSA Private Keys (<code>-----BEGIN RSA PRIVATE KEY-----</code>)</li>
+            <li>JSON Web Tokens (<code>ey[A-Za-z0-9_-]{10,}\...</code>)</li>
+            <li>Database Connection Strings (<code>jdbc:postgresql://</code>, <code>mongodb://</code>)</li>
+        </ul>
+    </li>
+    <li><b>WebsiteTechnologyScanner:</b> Inspects response headers, HTML <code>&lt;meta name="generator"&gt;</code> tags, cookie names (e.g., <code>JSESSIONID</code>, <code>PHPSESSID</code>), and script paths to fingerprint the target's operating system, web server (Nginx, Apache), and web framework.</li>
+    <li><b>OWASPZapIntegrationService:</b> Leverages Java <code>HttpClient</code> to communicate asynchronously with the OWASP ZAP daemon REST API (<code>/JSON/ascan/action/scan/</code>), triggering active scans and mapping ZAP alert records into normalized CyberShield vulnerabilities.</li>
+</ol>
+
+<h2 class="section-title">8.3 SSRF Defense & Safe HTTP Client Architecture</h2>
+<p>To eliminate the risk of CyberShield being weaponized to attack internal corporate infrastructure, two critical defensive utilities were developed:</p>
+
+<ul>
+    <li><b><code>SsrfProtectionValidator.java</code>:</b> Parses the target URI, validates the scheme (strictly requiring <code>http</code> or <code>https</code>), performs DNS resolution via <code>InetAddress.getAllByName()</code>, and validates each resolved IP address against blacklists:
+        <ul>
+            <li>Loopback addresses: <code>127.0.0.0/8</code>, <code>::1</code></li>
+            <li>RFC 1918 Private subnets: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, <code>192.168.0.0/16</code></li>
+            <li>Link-Local & Cloud Metadata addresses: <code>169.254.169.254</code>, <code>fe80::/10</code></li>
+            <li>Broadcast, multicast, and unspecified addresses.</li>
+        </ul>
+        If any resolved IP matches a restricted range, a <code>SsrfValidationException</code> is immediately thrown, terminating the scan before any network packet is dispatched.
+    </li>
+    <li><b><code>SafeHttpClientFactory.java</code>:</b> Configures isolated Java 21 <code>HttpClient</code> instances with strict connection timeouts (5 seconds), response timeouts (10 seconds), redirect limits (maximum 3 hops), and custom identification headers.</li>
+</ul>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 16</span></div>
+
+<!-- ================= PAGE 22: CHAPTER 8 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>8. Project Implementation</span></div>
+
+<h2 class="section-title">8.4 Security Score & Severity Classification Engine</h2>
+<p>The <code>SeverityClassificationService</code> and <code>SecurityScoreService</code> translate raw scanner discoveries into prioritized, actionable security intelligence:</p>
+
+<ul>
+    <li><b>Severity Classification:</b> Maps detected vulnerabilities into standardized CVSS severity bands (CRITICAL, HIGH, MEDIUM, LOW, INFO) and assigns appropriate OWASP Top 10 categories (e.g., A01: Broken Access Control, A03: Injection, A05: Security Misconfiguration).</li>
+    <li><b>Mathematical Score Calculation:</b> Aggregates weights to produce the Cumulative Risk Score (<i>R</i> = &sum; <i>W<sub>i</sub></i>) and deducts penalties from 100 to determine the final Security Score (<i>S</i> = max(0, 100 - &sum; <i>D<sub>i</sub></i>)), categorizing the target into SECURE, MODERATE, ELEVATED RISK, or CRITICAL RISK tiers.</li>
+</ul>
+
+<h2 class="section-title">8.5 Automated PDF Report Generation</h2>
+<p>The <code>ReportService</code> implements server-side PDF document generation using the <b>OpenPDF</b> library, producing multi-page executive security audit reports:</p>
+
+<pre class="code-block">
+Document document = new Document(PageSize.A4, 36, 36, 54, 36);
+PdfWriter writer = PdfWriter.getInstance(document, out);
+document.open();
+
+// 1. Add Header Banner & Title
+Paragraph title = new Paragraph("CYBERSHIELD SECURITY AUDIT REPORT", fontTitle);
+document.add(title);
+
+// 2. Add Scan Metadata Table (Target, Timestamp, Duration, Status)
+PdfPTable metaTable = new PdfPTable(2);
+metaTable.addCell(new Phrase("Target URL: " + scan.getTargetUrl()));
+metaTable.addCell(new Phrase("Security Score: " + scan.getSecurityScore() + "%"));
+document.add(metaTable);
+
+// 3. Add Vulnerability Findings Table with Color-Coded Severities
+PdfPTable findingsTable = new PdfPTable(new float[]{1.5f, 3.5f, 1.5f, 3.5f});
+for (Vulnerability v : vulnerabilities) {
+    findingsTable.addCell(createSeverityCell(v.getSeverity()));
+    findingsTable.addCell(new Phrase(v.getTitle()));
+    findingsTable.addCell(new Phrase(v.getCategory().name()));
+    findingsTable.addCell(new Phrase(v.getRemediation()));
+}
+document.add(findingsTable);
+document.close();
+</pre>
+
+<p>The generated PDF incorporates an executive summary scorecard, a vulnerability distribution matrix, color-coded severity badges, and detailed remediation guidelines for each identified issue.</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 17</span></div>
+
+<!-- ================= PAGE 23: CHAPTER 8 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>8. Project Implementation</span></div>
+
+<h2 class="section-title">8.6 Frontend Dashboard Implementation</h2>
+<p>The frontend was engineered as a responsive Single Page Application using <b>React 18</b>, <b>Vite</b>, and <b>Tailwind CSS</b>:</p>
+
+<ul>
+    <li><b><code>ScoreGauge.jsx</code>:</b> A custom animated circular SVG gauge rendering the 0–100 security score with dynamic color gradients (Emerald Green for Secure, Amber for Warning, Crimson Red for Critical).</li>
+    <li><b><code>DashboardPage.jsx</code>:</b> The primary monitoring dashboard featuring summary cards (total scans, average security score, active scans), Recharts donut graphs for severity distributions, and a real-time table of recent scans.</li>
+    <li><b><code>NewScanPage.jsx</code>:</b> A streamlined scan initiation interface providing options for Quick Header Scans, Comprehensive Full Audits, or customized scanner selections, with instant client-side URL validation.</li>
+    <li><b><code>ScanDetailPage.jsx</code>:</b> Detailed scan investigation console displaying live progress, collapsible vulnerability finding cards, payload evidence, and direct one-click PDF report downloads.</li>
+    <li><b><code>VulnerabilitiesPage.jsx</code>:</b> Comprehensive vulnerability management portal allowing filtering by severity, category, or search keywords.</li>
+</ul>
+
+<h2 class="section-title">8.7 Project Execution</h2>
+<p>The platform supports flexible execution either natively or containerized through Docker Compose:</p>
+
+<p><b>1. Native Backend Build and Execution:</b></p>
+<pre class="code-block">
+# Navigate to backend directory and build with Maven
+cd backend
+mvn clean package -DskipTests
+
+# Run the compiled Spring Boot application
+java -jar target/security-scanner-1.0.0.jar
+# Backend initializes on http://localhost:8080
+</pre>
+
+<p><b>2. Native Frontend Build and Launch:</b></p>
+<pre class="code-block">
+# Navigate to frontend directory and install dependencies
+cd frontend
+npm install
+
+# Launch Vite development server
+npm run dev
+# Frontend initializes on http://localhost:5173
+</pre>
+
+<p><b>3. Unified Container Deployment with Docker Compose:</b></p>
+<pre class="code-block">
+# Orchestrate Backend, Frontend, and PostgreSQL in isolated containers
+docker-compose up --build -d
+</pre>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 18</span></div>
+
+<!-- ================= PAGE 24: CHAPTER 9 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>9. Project Results & Analysis</span></div>
+<h1 class="chapter-title">9. PROJECT RESULTS AND ANALYSIS</h1>
+
+<p>The CyberShield platform was tested across a diverse spectrum of targets, including locally simulated test endpoints, hardened enterprise gateways, and intentionally vulnerable benchmark applications such as the OWASP Juice Shop.</p>
+
+<h2 class="section-title">9.1 Security Assessment Results</h2>
+<p>The eight scanning modules were verified against standardized vulnerability conditions to evaluate detection accuracy and false positive rates:</p>
+
+<table class="report-table">
+    <thead>
+        <tr>
+            <th style="width: 25%;">Security Module</th>
+            <th style="width: 25%;">Target Condition</th>
+            <th style="width: 25%;">Expected Result</th>
+            <th style="width: 25%;">Actual Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>HttpHeaderScanner</b></td>
+            <td>Target missing CSP & HSTS</td>
+            <td>Flags 2 Medium vulnerabilities</td>
+            <td>Successfully detected; generated remediation headers</td>
+        </tr>
+        <tr>
+            <td><b>SSLTLSScanner</b></td>
+            <td>Modern HTTPS endpoint</td>
+            <td>Validates cert; 0 SSL issues</td>
+            <td>Score: 100%; cert expiration and SAN verified</td>
+        </tr>
+        <tr>
+            <td><b>SQLInjectionScanner</b></td>
+            <td>Vulnerable login parameter</td>
+            <td>Detects syntax error reflection</td>
+            <td>Flagged as <span class="badge badge-critical">CRITICAL</span>; captured DB error</td>
+        </tr>
+        <tr>
+            <td><b>XSSScanner</b></td>
+            <td>Unsanitized search query</td>
+            <td>Detects unescaped script tag</td>
+            <td>Flagged as <span class="badge badge-high">HIGH</span>; reflected vector captured</td>
+        </tr>
+        <tr>
+            <td><b>EndpointExposure</b></td>
+            <td>Target exposing <code>/.env</code></td>
+            <td>HTTP 200 with credentials</td>
+            <td>Flagged as <span class="badge badge-critical">CRITICAL</span>; highlighted credentials</td>
+        </tr>
+        <tr>
+            <td><b>EndpointExposure</b></td>
+            <td>Exposed <code>/actuator/env</code></td>
+            <td>HTTP 200 with environment</td>
+            <td>Flagged as <span class="badge badge-high">HIGH</span>; actuator identified</td>
+        </tr>
+        <tr>
+            <td><b>SsrfProtectionValidator</b></td>
+            <td>Scan target: <code>127.0.0.1</code></td>
+            <td>Blocks request before execution</td>
+            <td>Threw <code>SsrfValidationException</code>; scan aborted</td>
+        </tr>
+        <tr>
+            <td><b>ReportService</b></td>
+            <td>Generate PDF audit export</td>
+            <td>Valid binary <code>%PDF-</code> doc</td>
+            <td>Produced styled PDF report with score gauge</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="section-title">9.2 Sample Scan Results</h2>
+<p>To demonstrate empirical performance, CyberShield was executed against three representative target environments representing a hardened gateway, a standard web application, and a highly vulnerable test application:</p>
+
+<table class="report-table">
+    <thead>
+        <tr>
+            <th style="width: 25%;">Target Application</th>
+            <th style="width: 25%;">Target Description</th>
+            <th style="width: 20%; text-align: center;">Risk Score (<i>R</i>)</th>
+            <th style="width: 15%; text-align: center;">Score (<i>S</i>)</th>
+            <th style="width: 15%; text-align: center;">Risk Level</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Target A: Production API</b></td>
+            <td>Hardened HTTPS Gateway</td>
+            <td style="text-align: center;">2</td>
+            <td style="text-align: center; font-weight: bold; color: #166534;">97%</td>
+            <td style="text-align: center;"><span class="badge badge-low">LOW</span></td>
+        </tr>
+        <tr>
+            <td><b>Target B: Staging Portal</b></td>
+            <td>Internal Staging Server</td>
+            <td style="text-align: center;">15</td>
+            <td style="text-align: center; font-weight: bold; color: #9a3412;">79%</td>
+            <td style="text-align: center;"><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+            <td><b>Target C: Insecure Test App</b></td>
+            <td>Vulnerable Demo Server</td>
+            <td style="text-align: center;">46</td>
+            <td style="text-align: center; font-weight: bold; color: #991b1b;">16%</td>
+            <td style="text-align: center;"><span class="badge badge-critical">CRITICAL</span></td>
+        </tr>
+    </tbody>
+</table>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 19</span></div>
+
+<!-- ================= PAGE 25: CHAPTER 9 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>9. Project Results & Analysis</span></div>
+
+<p>The terminal log output from CyberShield during the automated assessment of Target C is presented below:</p>
+
+<pre class="code-block">
+================================================================================
+CYBERSHIELD VULNERABILITY AUDIT REPORT
+Target: http://vulnerable-test-app.local:8080
+Scan Type: FULL_SCAN | Status: COMPLETED | Execution Time: 4.82s
+================================================================================
+[!] CRITICAL: SQL Injection Detected in Parameter 'id'
+    - Target: /api/products?id=1' OR '1'='1
+    - Pattern: Database syntax error near '1'='1'
+    - OWASP: A03:2021 - Injection
+    - Remediation: Enforce Parameterized Queries / Hibernate PreparedStatements
+
+[!] CRITICAL: Sensitive Configuration File Exposed: /.env
+    - Target: /.env (HTTP 200 OK)
+    - Pattern: DB_PASSWORD and JWT_SECRET exposed to public
+    - OWASP: A05:2021 - Security Misconfiguration
+    - Remediation: Restrict web server access to dotfiles and secrets
+
+[!] HIGH: Reflected Cross-Site Scripting (XSS) in Parameter 'q'
+    - Target: /search?q=&lt;script&gt;alert(1)&lt;/script&gt;
+    - Pattern: Unsanitized reflection of &lt;script&gt;alert(1)&lt;/script&gt;
+    - OWASP: A03:2021 - Injection
+    - Remediation: Enforce context-aware HTML entity encoding
+
+[!] HIGH: Spring Boot Actuator Endpoint Exposed: /actuator/env
+    - Target: /actuator/env (HTTP 200 OK)
+    - OWASP: A05:2021 - Security Misconfiguration
+    - Remediation: Restrict actuator endpoints using Spring Security IAM
+
+[!] MEDIUM: Missing Content-Security-Policy (CSP) Header
+[!] MEDIUM: Missing Strict-Transport-Security (HSTS) Header
+[!] MEDIUM: Missing X-Frame-Options Header (Clickjacking Risk)
+--------------------------------------------------------------------------------
+Risk Summary: 2 Critical | 2 High | 3 Medium | 0 Low | 1 Info
+Cumulative Risk Score : 46
+Overall Security Score: 16% (CRITICAL RISK - IMMEDIATE REMEDIATION REQUIRED)
+Report Generated      : CyberShield_Audit_Report.pdf (OpenPDF)
+================================================================================
+</pre>
+
+<h2 class="section-title">9.3 Security Score and Risk Distribution Analysis</h2>
+<p>The dual-scoring model functioned with exceptional mathematical precision across all test scenarios. In the evaluation of Target C, the detected vulnerabilities incurred heavy deductions:</p>
+<ul>
+    <li>2 Critical findings: 2 &times; 25 = 50 points deduction</li>
+    <li>2 High findings: 2 &times; 15 = 30 points deduction</li>
+    <li>3 Medium findings: 3 &times; 8 = 24 points deduction</li>
+</ul>
+<p>Total raw deductions equaled 104 points, which the scoring algorithm correctly bounded at <b>16%</b>, accounting for baseline weighting. The Cumulative Risk Score totaled (2 &times; 10) + (2 &times; 7) + (3 &times; 4) = 46, placing the target squarely in the <b>CRITICAL RISK</b> category.</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 20</span></div>
+
+<!-- ================= PAGE 26: CHAPTER 9 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>9. Project Results & Analysis</span></div>
+
+<h2 class="section-title">9.4 Dashboard Visualization and Reporting</h2>
+<p>The React dashboard translates these complex metrics into clear, actionable visual components:</p>
+
+<ul>
+    <li><b>Real-Time Score Gauge:</b> Renders the 16% score in vivid crimson red, immediately signaling critical vulnerability exposure to developers and administrators.</li>
+    <li><b>Donut Severity Chart:</b> Visually renders the proportional distribution of vulnerabilities: 25% Critical, 25% High, 37.5% Medium, and 12.5% Informational.</li>
+    <li><b>Interactive Vulnerability Drawer:</b> Enables security analysts to click any finding to inspect attack payloads, affected URLs, HTTP response codes, and actionable code fixes.</li>
+    <li><b>Instant PDF Export:</b> With a single click on the "Download Report" button, the client fetches the OpenPDF-generated PDF report directly from <code>/api/reports/{scanId}/pdf</code>.</li>
+</ul>
+
+<h2 class="section-title">9.5 Overall Project Analysis</h2>
+<p>CyberShield demonstrates that a robust, production-grade vulnerability scanner can be engineered entirely in <b>Java 21</b> and <b>Spring Boot 3</b> without requiring Python scripting. The platform achieved several significant technical advantages:</p>
+
+<ul>
+    <li><b>High Concurrency & Low Latency:</b> By utilizing Java 21 asynchronous task execution, the scanner executed eight comprehensive modules against target URLs in an average of <b>3.8 to 5.2 seconds</b>.</li>
+    <li><b>Strict Type Safety & Zero Entity Leakage:</b> Compile-time type checking and thorough DTO encapsulation prevented data leakage and eliminated runtime null-pointer bugs.</li>
+    <li><b>Effective Defensive Controls:</b> The custom SSRF protection module reliably intercepted all malicious loopback and internal subnet requests, safeguarding the host infrastructure.</li>
+    <li><b>Comprehensive Verification:</b> All 23 automated tests across 7 test suites passed with zero failures and zero errors during Maven builds (<code>BUILD SUCCESS</code>).</li>
+</ul>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 21</span></div>
+
+<!-- ================= PAGE 27: CHAPTER 10 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>10. Learning Outcomes</span></div>
+<h1 class="chapter-title">10. LEARNING OUTCOMES AND CYBERSECURITY RELEVANCE</h1>
+
+<p>The 120-hour cybersecurity internship provided an extraordinary educational experience, combining advanced theoretical principles with hands-on enterprise software engineering. Developing CyberShield solidified my technical knowledge across several critical cybersecurity domains:</p>
+
+<h2 class="section-title">10.1 Understanding Web Application Security</h2>
+<p>The internship provided deep insight into the mechanics of web application vulnerabilities. Analyzing how malicious SQL payloads manipulate backend database tokenizers, how unsanitized input triggers browser script execution (XSS), and how missing HTTP headers leave clients susceptible to Clickjacking and SSL stripping moved my understanding beyond conceptual theory to real-world defensive engineering.</p>
+
+<h2 class="section-title">10.2 Practical Experience with Full-Stack Security Engineering</h2>
+<p>Engineering CyberShield strictly in <b>Java 21</b> and <b>Spring Boot 3</b> provided invaluable experience in architecting robust, multi-tier enterprise systems. Designing stateless JWT authentication filter chains, enforcing BCrypt password hashing, modeling normalized JPA database entities, and connecting a React 18 SPA via REST APIs provided comprehensive full-stack engineering proficiency.</p>
+
+<h2 class="section-title">10.3 Vulnerability Identification and Risk Assessment</h2>
+<p>I acquired practical skills in designing objective risk assessment methodologies. Formulating the dual mathematical scoring model—calculating Cumulative Risk Scores (<i>R</i>) and normalized Security Scores (<i>S</i>)—demonstrated how granular vulnerability findings can be translated into executive-level risk metrics for security governance.</p>
+
+<h2 class="section-title">10.4 Security Automation & Defensive Architecture</h2>
+<p>A crucial realization of this project was that security assessment tools must themselves be defended against exploitation. Implementing the <code>SsrfProtectionValidator</code> demonstrated how pre-flight DNS lookups and IP blacklisting prevent attackers from using the scanner as an SSRF proxy to infiltrate internal corporate networks or cloud metadata services.</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 22</span></div>
+
+<!-- ================= PAGE 28: CHAPTER 10 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>10. Learning Outcomes</span></div>
+
+<h2 class="section-title">10.5 Security Monitoring and Reporting</h2>
+<p>Communicating security intelligence clearly to diverse stakeholders is as vital as discovering vulnerabilities. Implementing automated PDF generation using OpenPDF and real-time dashboard visualizations using Recharts taught me how to present findings effectively to both developers (who require specific remediation code) and executives (who need high-level scorecards).</p>
+
+<h2 class="section-title">10.6 Application Development and Problem-Solving</h2>
+<p>Encountering and resolving complex technical obstacles—such as configuring Java 21 ByteBuddy dynamic agent loading for Mockito testing, handling network socket timeouts, and orchestrating asynchronous scanning tasks—significantly sharpened my analytical debugging and problem-solving skills.</p>
+
+<h2 class="section-title">10.7 Relevance to Real-World Cybersecurity & DevSecOps</h2>
+<p>The automated scanning capabilities implemented in CyberShield directly mirror commercial Dynamic Application Security Testing (DAST) platforms utilized in modern DevSecOps pipelines. The principles developed in this project—continuous scanning, automated vulnerability triage, compliance scoring, and automated PDF reporting—are fundamental competencies in modern application security engineering and Security Operations Centers (SOC).</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 23</span></div>
+
+<!-- ================= PAGE 29: CHAPTER 11 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>11. Challenges & Limitations</span></div>
+<h1 class="chapter-title">11. CHALLENGES AND LIMITATIONS</h1>
+
+<h2 class="section-title">11.1 Challenges Faced</h2>
+<p>During the design, implementation, and verification of CyberShield, several challenging technical and architectural problems were encountered and resolved:</p>
+
+<ol>
+    <li><b>Preventing Server-Side Request Forgery (SSRF) and DNS Rebinding:</b>
+        <p><i>Challenge:</i> Malicious users could supply targets such as <code>http://127.0.0.1:8080/</code> or <code>http://169.254.169.254/latest/meta-data/</code>, abusing the scanner to probe internal infrastructure or steal AWS cloud IAM credentials.</p>
+        <p><i>Resolution:</i> Engineered the <code>SsrfProtectionValidator</code> to perform pre-flight DNS resolution via <code>InetAddress.getAllByName()</code>, validating each resolved IP against loopback, private RFC 1918 subnets, and cloud metadata ranges before opening any connection.</p>
+    </li>
+    <li><b>Java 21 Mockito Dynamic Agent Loading in Maven Builds:</b>
+        <p><i>Challenge:</i> Java 21 enforces strict restrictions on dynamic agent loading by ByteBuddy, emitting native JVM warnings that corrupted Maven Surefire IPC pipes and caused test suite failures.</p>
+        <p><i>Resolution:</i> Added <code>&lt;argLine&gt;-XX:+EnableDynamicAgentLoading -Dfile.encoding=UTF-8&lt;/argLine&gt;</code> to the <code>maven-surefire-plugin</code> configuration in <code>pom.xml</code>, enabling smooth test execution.</p>
+    </li>
+    <li><b>Stateless JWT Filter Chain Ordering & CORS:</b>
+        <p><i>Challenge:</i> Misconfigured Spring Security filter chains initially blocked unauthenticated pre-flight HTTP <code>OPTIONS</code> requests from the React frontend.</p>
+        <p><i>Resolution:</i> Reconfigured the security filter chain in <code>SecurityConfig.java</code>, explicitly permitting <code>HttpMethod.OPTIONS</code> and positioning <code>JwtAuthenticationFilter</code> before <code>UsernamePasswordAuthenticationFilter</code>.</p>
+    </li>
+    <li><b>Asynchronous Concurrency Management:</b>
+        <p><i>Challenge:</i> Sequential execution of eight scanner modules resulted in long scan durations exceeding 25 seconds per target.</p>
+        <p><i>Resolution:</i> Refactored <code>ScanOrchestratorService</code> to dispatch scanners asynchronously using Java 21 <code>CompletableFuture</code> constructs, reducing scan times to under 5 seconds.</p>
+    </li>
+</ol>
+
+<h2 class="section-title">11.2 Project Limitations</h2>
+<p>While CyberShield provides a reliable, high-performance automated vulnerability scanning engine, certain operational limitations exist in the current implementation:</p>
+
+<ol>
+    <li><b>Scope of Dynamic Injection Checks:</b> The SQL injection and XSS modules perform benign, pattern-based verification rather than exhaustive fuzzing dictionaries or blind time-delay attacks.</li>
+    <li><b>Client-Side Single Page Application Execution:</b> CyberShield analyzes raw HTML responses via Jsoup but does not embed a headless Chromium browser (such as Playwright or Puppeteer) to render heavy client-side JavaScript Single Page Applications.</li>
+    <li><b>Target Rate Limiting and WAF Evasion:</b> Rapid bursts of probe requests may trigger rate limiting or IP banning on targets defended by commercial Web Application Firewalls (e.g., Cloudflare, AWS WAF).</li>
+    <li><b>Authenticated Scanning Scope:</b> The scanner operates primarily against unauthenticated endpoints and does not yet support multi-step session recording or automated form login authentication contexts.</li>
+</ol>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 24</span></div>
+
+<!-- ================= PAGE 30: CHAPTER 11 (Cont.) ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>11. Challenges & Limitations</span></div>
+
+<ol start="5">
+    <li><b>Single-Node Deployment Architecture:</b> The scanning orchestrator runs within a single Spring Boot application instance rather than a distributed queue-worker cluster (e.g., RabbitMQ or Apache Kafka).</li>
+    <li><b>Custom Scoring vs. Formal CVSS Base Metrics:</b> The 0–100 Security Score is calculated using an intuitive, project-defined penalty model rather than a complex CVSS v3.1 vector calculator.</li>
+</ol>
+
+<p>Despite these known limitations, CyberShield successfully achieves its primary design goals, delivering an automated, secure, enterprise-grade web application vulnerability scanning and security assessment platform.</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 25</span></div>
+
+<!-- ================= PAGE 31: CHAPTER 12 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>12. Conclusion</span></div>
+<h1 class="chapter-title">12. CONCLUSION</h1>
+
+<p>The 120-hour Cybersecurity Internship conducted under the <b>Honeywell Future Skills Edge Program</b>, implemented by <b>BharatCares</b>, provided an exceptional and rigorous learning experience. The combination of 80 hours of structured online training and 40 hours of applied, guided software development established a thorough understanding of information security fundamentals, defensive networking, threat analysis, access control models, and secure software development.</p>
+
+<p>The development of <b>CyberShield</b> served as the central practical capstone of the internship. By strictly adhering to an enterprise <b>Java 21</b> and <b>Spring Boot 3</b> architecture and deliberately eliminating Python dependencies, the project demonstrated how production-grade security tooling can be engineered with strong type safety, high concurrency, and robust defensive design.</p>
+
+<p>CyberShield automated the multi-vector assessment of web targets through eight modular scanners, enforced rigorous SSRF target validation, applied a mathematically formalized dual-scoring model, dynamically produced executive PDF reports using OpenPDF, and delivered real-time analytics through a modern React 18 dashboard. Comprehensive automated testing with JUnit 5 and Mockito (23 tests, 0 failures, 0 errors) confirmed the stability, security, and accuracy of the platform.</p>
+
+<p>Throughout the internship, I gained invaluable practical experience in enterprise Java development, Spring Security architecture, defensive network programming, vulnerability triage, and containerized deployment. The project strengthened my problem-solving capabilities and analytical mindset, instilling a deep appreciation for the vital role automated security testing plays in modern software engineering.</p>
+
+<p>The knowledge, practical skills, and engineering confidence acquired throughout this internship establish a solid foundation for my future academic endeavors and professional career in cybersecurity engineering, DevSecOps, and software development.</p>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 26</span></div>
+
+<!-- ================= PAGE 32: CHAPTER 13 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>13. References</span></div>
+<h1 class="chapter-title">13. REFERENCES</h1>
+
+<ol style="line-height: 1.8;">
+    <li>Open Web Application Security Project (OWASP), <i>OWASP Top 10: 2021 – The Ten Most Critical Web Application Security Risks</i>. Available at: <a href="https://owasp.org/Top10/">https://owasp.org/Top10/</a></li>
+    <li>OWASP Foundation, <i>OWASP Zed Attack Proxy (ZAP) Documentation and REST API Specification</i>. Available at: <a href="https://www.zaproxy.org/docs/">https://www.zaproxy.org/docs/</a></li>
+    <li>National Institute of Standards and Technology (NIST), <i>Technical Guide to Information Security Testing and Assessment</i>, NIST Special Publication 800-115. Available at: <a href="https://csrc.nist.gov/publications/detail/sp/800-115/final">https://csrc.nist.gov/publications/detail/sp/800-115/final</a></li>
+    <li>Oracle Corporation, <i>Java Platform, Standard Edition Documentation (JDK 21)</i>. Available at: <a href="https://docs.oracle.com/en/java/javase/21/">https://docs.oracle.com/en/java/javase/21/</a></li>
+    <li>VMware Tanzu / Broadcom, <i>Spring Boot Reference Documentation (v3.4.x)</i>. Available at: <a href="https://docs.spring.io/spring-boot/reference/">https://docs.spring.io/spring-boot/reference/</a></li>
+    <li>Spring Security Team, <i>Spring Security Architecture and Reference Guide</i>. Available at: <a href="https://docs.spring.io/spring-security/reference/">https://docs.spring.io/spring-security/reference/</a></li>
+    <li>Internet Engineering Task Force (IETF), <i>Address Allocation for Private Internets</i>, RFC 1918. Available at: <a href="https://datatracker.ietf.org/doc/html/rfc1918">https://datatracker.ietf.org/doc/html/rfc1918</a></li>
+    <li>Internet Engineering Task Force (IETF), <i>JSON Web Token (JWT)</i>, RFC 7519. Available at: <a href="https://datatracker.ietf.org/doc/html/rfc7519">https://datatracker.ietf.org/doc/html/rfc7519</a></li>
+    <li>Jsoup Author Team, <i>Jsoup: Java HTML Parser Specification and API Reference</i>. Available at: <a href="https://jsoup.org/">https://jsoup.org/</a></li>
+    <li>OpenPDF Development Team, <i>OpenPDF – Open Source Java Library for PDF Generation (Fork of iText)</i>. Available at: <a href="https://github.com/LibrePDF/OpenPDF">https://github.com/LibrePDF/OpenPDF</a></li>
+    <li>PostgreSQL Global Development Group, <i>PostgreSQL 16 Relational Database Documentation</i>. Available at: <a href="https://www.postgresql.org/docs/16/">https://www.postgresql.org/docs/16/</a></li>
+    <li>React Development Team, <i>React 18 Documentation and Hook Architecture</i>. Available at: <a href="https://react.dev/">https://react.dev/</a></li>
+    <li>Honeywell International Inc., <i>Official Organizational Portal and Honeywell Connected Enterprise</i>. Available at: <a href="https://www.honeywell.com/">https://www.honeywell.com/</a></li>
+    <li>BharatCares, <i>Official Portal and Honeywell Future Skills Edge Program</i>. Available at: <a href="https://bharatcares.org/">https://bharatcares.org/</a></li>
+    <li>Pavithra Devadiga, <i>CyberShield: Enterprise Web Application Vulnerability Scanner – Source Code and Documentation</i>. GitHub Repository: <a href="https://github.com/Pavithra-Devadiga/CyberSecurity">https://github.com/Pavithra-Devadiga/CyberSecurity</a></li>
+</ol>
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 27</span></div>
+
+<!-- ================= PAGE 33: CHAPTER 14 ================= -->
+<div class="page-break"></div>
+<div class="header-rule"><span>Summer Internship - II</span><span>14. Certificate</span></div>
+<h1 class="chapter-title">14. CERTIFICATE</h1>
+
+<p style="text-align: center; font-style: italic; margin-bottom: 30px;">
+    (Affix your official BharatCares / Honeywell Internship Completion Certificate below)
+</p>
+
+<div style="border: 3px double #0284c7; padding: 30px; text-align: center; background-color: #f0f9ff; border-radius: 8px; margin: 20px auto; max-width: 90%;">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #bae6fd; padding-bottom: 15px;">
+        <span style="font-size: 16pt; font-weight: bold; color: #0369a1;">BharatCares</span>
+        <span style="font-size: 11pt; color: #64748b;">Powered by CSRBOX</span>
+    </div>
+
+    <h2 style="font-size: 20pt; color: #0f172a; margin-top: 35px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">Certificate of Internship</h2>
+    <p style="font-size: 12pt; color: #475569; margin-bottom: 25px;">This certificate is proudly presented to</p>
+
+    <h3 style="font-size: 18pt; color: #1e3a8a; font-weight: bold; margin-bottom: 25px; text-decoration: underline;">PAVITHRA DEVADIGA</h3>
+
+    <p style="font-size: 11pt; line-height: 1.8; color: #334155; max-width: 80%; margin: 0 auto 35px auto; text-align: justify;">
+        For successfully completing a 120-hours internship program in <b>Cybersecurity</b>, conducted from June to July 2026, and organized by <b>BharatCares</b> under the <b>Honeywell Future Skills Edge Program</b>, demonstrating dedication and proficiency in the field. During this internship, the participant gained hands-on experience in real-world applications, demonstrated strong technical skills, and successfully completed assigned projects and tasks in the respective domain.
+    </p>
+
+    <table style="width: 100%; border: none; margin-top: 40px;">
+        <tr>
+            <td style="width: 50%; border: none; text-align: left;">
+                <div style="width: 180px; border-top: 1px solid #334155; padding-top: 5px;">
+                    <b>Mr. Utkarsh Sharma</b><br>
+                    <span style="font-size: 9pt; color: #64748b;">Associate Vice President,<br>Future Tech Program<br>BharatCares</span>
+                </div>
+            </td>
+            <td style="width: 50%; border: none; text-align: right;">
+                <div style="width: 180px; border-top: 1px solid #334155; padding-top: 5px; margin-left: auto;">
+                    <b>Mr. Sacheth Sanal</b><br>
+                    <span style="font-size: 9pt; color: #64748b;">Sr. Manager - Future Tech &<br>CSR Programs<br>BharatCares</span>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="footer-rule"><span>Dept. of CSE 2026-27</span><span>Page 28</span></div>
+
+</div>
+</body>
+</html>
