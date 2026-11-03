@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: cybersecurity-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: cybersecurity_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d cybersecurity_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - security-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: cybersecurity-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/cybersecurity_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      HIBERNATE_DDL_AUTO: update
+      SCANNER_ZAP_ENABLED: "false"
+      SCANNER_ZAP_BASE_URL: http://zap:8090
+      APP_JWT_SECRET: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    ports:
+      - "8080:8080"
+    networks:
+      - security-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cybersecurity-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    networks:
+      - security-net
+
+  # Optional OWASP ZAP daemon service for deep active scanning
+  zap:
+    image: zaproxy/zap-stable:latest
+    container_name: cybersecurity-zap
+    restart: unless-stopped
+    command: zap.sh -daemon -host 0.0.0.0 -port 8090 -config api.disablekey=true -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true
+    ports:
+      - "8090:8090"
+    networks:
+      - security-net
+    profiles:
+      - with-zap
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  security-net:
+    driver: bridge
